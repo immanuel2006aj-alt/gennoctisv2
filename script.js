@@ -2159,69 +2159,104 @@ initializePricingCounter();
 /*==================================================
 INITIALIZE
 ==================================================*/
-
 function initializePricingCounter(){
 
     pricingCounter.section =
-
         document.querySelector("#pricing");
 
     pricingCounter.number =
-
         document.getElementById("priceCounter");
 
     if(
-
         !pricingCounter.section ||
-
         !pricingCounter.number
-
     ) return;
 
     pricingCounter.started = false;
 
-    const observer =
+    function startCounter(){
 
-    new IntersectionObserver(
+        if(pricingCounter.started) return;
 
-        entries=>{
+        pricingCounter.started = true;
 
-            entries.forEach(entry=>{
+        animatePriceCounter();
 
-                if(
+    }
 
-                    entry.isIntersecting &&
+    /* IntersectionObserver */
 
-                    !pricingCounter.started
+    if("IntersectionObserver" in window){
 
-                ){
+        const observer = new IntersectionObserver(
 
-                    pricingCounter.started = true;
+            entries=>{
 
-                    animatePriceCounter();
+                entries.forEach(entry=>{
 
-                }
+                    if(entry.isIntersecting){
 
-            });
+                        startCounter();
+
+                        observer.disconnect();
+
+                    }
+
+                });
+
+            },
+
+            {
+
+                threshold: 0,
+                rootMargin: "0px 0px -20% 0px"
+
+            }
+
+        );
+
+        observer.observe(pricingCounter.section);
+
+    }
+
+    /* Mobile Scroll Fallback */
+
+    window.addEventListener(
+
+        "scroll",
+
+        function checkPricing(){
+
+            if(pricingCounter.started) return;
+
+            const rect =
+                pricingCounter.section.getBoundingClientRect();
+
+            if(rect.top < window.innerHeight * 0.8){
+
+                startCounter();
+
+                window.removeEventListener(
+
+                    "scroll",
+
+                    checkPricing
+
+                );
+
+            }
 
         },
 
         {
 
-            threshold:.45
+            passive:true
 
         }
 
     );
 
-    observer.observe(
-
-        pricingCounter.section
-
-    );
-
 }
-
 /*==================================================
 COUNTER
 ==================================================*/
@@ -3283,3 +3318,206 @@ function setupPerformanceMode(){
     }
 
         }
+/*==================================================
+PHASE 19A-2
+FINAL PRODUCTION POLISH
+==================================================*/
+
+/*==================================================
+ERROR HANDLER
+==================================================*/
+
+window.addEventListener(
+
+    "error",
+
+    event=>{
+
+        console.warn(
+
+            "Noctis JS Warning:",
+
+            event.message
+
+        );
+
+    }
+
+);
+
+/*==================================================
+UNHANDLED PROMISES
+==================================================*/
+
+window.addEventListener(
+
+    "unhandledrejection",
+
+    event=>{
+
+        console.warn(
+
+            "Unhandled Promise:",
+
+            event.reason
+
+        );
+
+    }
+
+);
+
+/*==================================================
+PAGE VISIBILITY
+==================================================*/
+
+document.addEventListener(
+
+    "visibilitychange",
+
+    ()=>{
+
+        if(document.hidden){
+
+            stopProjectAutoPlay();
+
+            stopAICycle();
+
+        }
+
+        else{
+
+            startProjectAutoPlay();
+
+            startAICycle();
+
+        }
+
+    }
+
+);
+
+/*==================================================
+KEYBOARD SHORTCUTS
+==================================================*/
+
+document.addEventListener(
+
+    "keydown",
+
+    event=>{
+
+        if(
+
+            event.ctrlKey &&
+
+            event.shiftKey &&
+
+            event.key==="D"
+
+        ){
+
+            console.clear();
+
+            console.table({
+
+                Website:"Noctis Technologies",
+
+                Version:"1.0.0",
+
+                Status:"Production Ready",
+
+                Author:"Sam Immanuel J"
+
+            });
+
+        }
+
+    }
+
+);
+
+/*==================================================
+EASTER EGG
+==================================================*/
+
+let easterEggTimer;
+
+const footer =
+
+document.querySelector(
+
+    ".footer"
+
+);
+
+if(footer){
+
+    footer.addEventListener(
+
+        "mouseenter",
+
+        ()=>{
+
+            easterEggTimer=
+
+            setTimeout(()=>{
+
+                console.log(
+
+`✨ Dream.
+✨ Design.
+✨ Develop.
+✨ Deploy.
+
+NOCTIS TECHNOLOGIES`
+
+                );
+
+            },5000);
+
+        }
+
+    );
+
+    footer.addEventListener(
+
+        "mouseleave",
+
+        ()=>{
+
+            clearTimeout(
+
+                easterEggTimer
+
+            );
+
+        }
+
+    );
+
+}
+
+/*==================================================
+VERSION
+==================================================*/
+
+window.noctis.version =
+
+"1.0.0";
+
+/*==================================================
+READY
+==================================================*/
+
+console.log(
+
+"%c✔ Noctis Technologies v1.0.0 Ready",
+
+"color:#10b981;font-size:16px;font-weight:bold;"
+
+);
+
+/*==================================================
+END OF SCRIPT.JS
+==================================================*/
