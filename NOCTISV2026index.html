@@ -1,0 +1,9883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- =========================
+       BASIC META
+  ========================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Noctis Technologies | AI Solutions • Web Development • Automation</title>
+
+  <meta name="description"
+        content="Noctis Technologies builds premium websites, AI solutions, automation systems and digital experiences for businesses worldwide.">
+
+  <meta name="keywords"
+        content="Noctis Technologies, AI, Website Development, Automation, Web Design, Software Development, UI UX">
+
+  <meta name="author"
+        content="Noctis Technologies">
+
+  <meta name="robots"
+        content="index, follow">
+
+  <meta name="theme-color"
+        content="#0B1120">
+
+  <!-- =========================
+       OPEN GRAPH
+  ========================== -->
+
+  <meta property="og:type"
+        content="website">
+
+  <meta property="og:title"
+        content="Noctis Technologies">
+
+  <meta property="og:description"
+        content="Premium AI Solutions & Modern Website Development">
+
+  <meta property="og:image"
+        content="assets/images/preview.webp">
+
+  <meta property="og:url"
+        content="https://yourdomain.com">
+
+  <!-- =========================
+       TWITTER
+  ========================== -->
+
+  <meta name="twitter:card"
+        content="summary_large_image">
+
+  <meta name="twitter:title"
+        content="Noctis Technologies">
+
+  <meta name="twitter:description"
+        content="Premium AI Solutions & Website Development">
+
+  <!-- =========================
+       FONTS
+  ========================== -->
+
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+  <!-- =========================
+       FAVICON
+  ========================== -->
+
+  <link rel="icon"
+        href="assets/icons/favicon.svg"
+        type="image/svg+xml">
+
+  <!-- =========================
+       CSS START
+  ========================== -->
+
+  <style>
+
+:root{
+
+    --bg:#0B1120;
+    --bg-soft:#111827;
+    --card:rgba(255,255,255,.05);
+
+    --primary:#10B981;
+    --primary-light:#34D399;
+
+    --silver:#D1D5DB;
+    --white:#F8FAFC;
+
+    --text:#E5E7EB;
+    --muted:#94A3B8;
+
+    --border:rgba(255,255,255,.08);
+
+    --radius:18px;
+
+    --shadow:
+    0 15px 50px rgba(0,0,0,.35);
+
+    --transition:.35s ease;
+
+    --max-width:1280px;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+
+scroll-behavior:smooth;
+-webkit-text-size-adjust:100%;
+
+}
+
+body{
+
+background:var(--bg);
+color:var(--text);
+
+font-family:"Inter",sans-serif;
+
+overflow-x:hidden;
+
+min-height:100vh;
+
+}
+
+h1,h2,h3,h4,h5,h6{
+
+font-family:"Space Grotesk",sans-serif;
+
+color:var(--white);
+
+font-weight:700;
+
+line-height:1.15;
+
+}
+
+p{
+
+color:var(--muted);
+
+line-height:1.8;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+button{
+
+font-family:inherit;
+
+cursor:pointer;
+
+border:none;
+
+outline:none;
+
+}
+
+img{
+
+display:block;
+
+width:100%;
+
+height:auto;
+
+}
+
+.container{
+
+width:min(92%,var(--max-width));
+
+margin:auto;
+
+}
+
+section{
+
+padding:90px 0;
+
+position:relative;
+
+}
+
+::selection{
+
+background:var(--primary);
+
+color:#fff;
+
+}
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:var(--bg);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:var(--primary);
+
+border-radius:20px;
+
+}
+/*==========================================
+BUTTON SYSTEM
+==========================================*/
+
+.btn{
+
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+
+padding:15px 24px;
+
+border-radius:16px;
+
+font-size:.95rem;
+font-weight:600;
+
+transition:all .35s ease;
+
+position:relative;
+
+overflow:hidden;
+
+white-space:nowrap;
+
+cursor:pointer;
+
+}
+
+.btn svg{
+
+width:18px;
+height:18px;
+
+flex-shrink:0;
+
+}
+
+.btn-primary{
+
+background:linear-gradient(
+135deg,
+var(--primary),
+var(--primary-light)
+);
+
+color:#fff;
+
+box-shadow:
+0 0 25px rgba(16,185,129,.28);
+
+}
+
+.btn-primary:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 15px 40px rgba(16,185,129,.35);
+
+}
+
+.btn-outline{
+
+background:rgba(255,255,255,.05);
+
+border:1px solid var(--border);
+
+color:var(--white);
+
+backdrop-filter:blur(18px);
+
+}
+
+.btn-outline:hover{
+
+background:rgba(255,255,255,.09);
+
+border-color:var(--primary);
+
+transform:translateY(-3px);
+
+}
+
+.btn::before{
+
+content:"";
+
+position:absolute;
+
+left:-120%;
+
+top:0;
+
+width:60%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.35),
+
+transparent
+
+);
+
+transition:.7s;
+
+}
+
+.btn:hover::before{
+
+left:150%;
+
+}
+
+/*==========================================
+GLASS CARD
+==========================================*/
+
+.glass{
+
+background:var(--card);
+
+border:1px solid var(--border);
+
+backdrop-filter:blur(22px);
+
+-webkit-backdrop-filter:blur(22px);
+
+border-radius:18px;
+
+box-shadow:var(--shadow);
+
+transition:.35s;
+
+}
+
+.glass:hover{
+
+transform:translateY(-6px);
+
+border-color:rgba(16,185,129,.25);
+
+}
+
+/*==========================================
+BACKGROUND
+==========================================*/
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background-image:
+
+linear-gradient(
+
+rgba(255,255,255,.03) 1px,
+
+transparent 1px
+
+),
+
+linear-gradient(
+
+90deg,
+
+rgba(255,255,255,.03) 1px,
+
+transparent 1px
+
+);
+
+background-size:40px 40px;
+
+pointer-events:none;
+
+opacity:.45;
+
+z-index:-3;
+
+}
+
+/*==========================================
+AURORA
+==========================================*/
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:900px;
+
+height:900px;
+
+left:-300px;
+
+top:-280px;
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(16,185,129,.18),
+
+transparent 70%
+
+);
+
+filter:blur(120px);
+
+pointer-events:none;
+
+z-index:-2;
+
+}
+
+/*==========================================
+FLOATING ORBS
+==========================================*/
+
+.orb{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(80px);
+
+pointer-events:none;
+
+z-index:-1;
+
+animation:float 10s ease-in-out infinite;
+
+}
+
+.orb.one{
+
+width:240px;
+
+height:240px;
+
+background:rgba(16,185,129,.16);
+
+top:8%;
+
+right:-70px;
+
+}
+
+.orb.two{
+
+width:180px;
+
+height:180px;
+
+background:rgba(255,255,255,.05);
+
+bottom:10%;
+
+left:-50px;
+
+animation-delay:2s;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:
+translateY(0px);
+
+}
+
+50%{
+
+transform:
+translateY(-28px);
+
+}
+
+100%{
+
+transform:
+translateY(0px);
+
+}
+
+}
+
+/*==========================================
+PREMIUM GLOW
+==========================================*/
+
+.glow{
+
+position:relative;
+
+}
+
+.glow::after{
+
+content:"";
+
+position:absolute;
+
+inset:-1px;
+
+border-radius:inherit;
+
+padding:1px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(16,185,129,.55),
+
+transparent,
+
+rgba(255,255,255,.12)
+
+);
+
+-webkit-mask:
+
+linear-gradient(#fff 0 0)
+
+content-box,
+
+linear-gradient(#fff 0 0);
+
+-webkit-mask-composite:xor;
+
+mask-composite:exclude;
+
+pointer-events:none;
+
+opacity:.65;
+
+}
+
+/*==========================================
+LOADING ANIMATION
+==========================================*/
+
+.loader{
+
+position:fixed;
+
+inset:0;
+
+background:var(--bg);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+z-index:99999;
+
+transition:.6s;
+
+}
+
+.loader-ring{
+
+width:72px;
+
+height:72px;
+
+border-radius:50%;
+
+border:4px solid rgba(255,255,255,.08);
+
+border-top-color:var(--primary);
+
+animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+/*==========================================
+RESPONSIVE FOUNDATION
+==========================================*/
+
+:focus-visible{
+outline:2px solid var(--primary);
+outline-offset:4px;
+border-radius:8px;
+}
+
+html{
+font-size:16px;
+}
+
+body.menu-open{
+overflow:hidden;
+touch-action:none;
+}
+
+main{
+position:relative;
+z-index:2;
+}
+
+.container-fluid{
+width:100%;
+padding-inline:20px;
+}
+
+.text-center{
+text-align:center;
+}
+
+.text-left{
+text-align:left;
+}
+
+.text-right{
+text-align:right;
+}
+
+.hidden{
+display:none!important;
+}
+
+.w-100{
+width:100%;
+}
+
+.mt-1{margin-top:8px;}
+.mt-2{margin-top:16px;}
+.mt-3{margin-top:24px;}
+.mt-4{margin-top:32px;}
+.mt-5{margin-top:48px;}
+
+.mb-1{margin-bottom:8px;}
+.mb-2{margin-bottom:16px;}
+.mb-3{margin-bottom:24px;}
+.mb-4{margin-bottom:32px;}
+.mb-5{margin-bottom:48px;}
+
+/*==========================================
+PREMIUM HEADER
+==========================================*/
+
+.header{
+
+position:fixed;
+
+top:0;
+left:0;
+right:0;
+
+height:78px;
+
+display:flex;
+align-items:center;
+
+z-index:1000;
+
+transition:
+background .35s ease,
+border-color .35s ease,
+backdrop-filter .35s ease,
+height .35s ease;
+
+background:transparent;
+
+}
+
+.header.scrolled{
+
+background:rgba(11,17,32,.72);
+
+backdrop-filter:blur(24px);
+-webkit-backdrop-filter:blur(24px);
+
+border-bottom:1px solid rgba(255,255,255,.06);
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.22);
+
+}
+
+.header-inner{
+
+width:min(92%,1280px);
+
+margin:auto;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:24px;
+
+height:100%;
+
+}
+
+/*==========================================
+LOGO
+==========================================*/
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+user-select:none;
+
+}
+
+.logo svg{
+
+width:42px;
+
+height:42px;
+
+flex-shrink:0;
+
+}
+
+.logo-text{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.logo-title{
+
+font-family:"Space Grotesk",sans-serif;
+
+font-size:1.08rem;
+
+font-weight:700;
+
+color:var(--white);
+
+line-height:1;
+
+letter-spacing:.3px;
+
+}
+
+.logo-sub{
+
+margin-top:4px;
+
+font-size:.72rem;
+
+color:var(--muted);
+
+font-weight:500;
+
+letter-spacing:.12em;
+
+text-transform:uppercase;
+
+}
+
+/*==========================================
+DESKTOP NAVIGATION
+==========================================*/
+
+.nav{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+.nav ul{
+
+display:flex;
+
+align-items:center;
+
+gap:6px;
+
+list-style:none;
+
+}
+
+.nav a{
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:11px 16px;
+
+border-radius:14px;
+
+font-size:.95rem;
+
+font-weight:500;
+
+color:var(--silver);
+
+transition:all .3s ease;
+
+}
+
+.nav a:hover{
+
+color:var(--white);
+
+background:rgba(255,255,255,.05);
+
+}
+
+.nav a.active{
+
+color:var(--white);
+
+background:rgba(16,185,129,.12);
+
+border:1px solid rgba(16,185,129,.20);
+
+}
+
+.nav a::after{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+bottom:6px;
+
+width:0;
+
+height:2px;
+
+background:var(--primary);
+
+border-radius:99px;
+
+transition:.3s ease;
+
+transform:translateX(-50%);
+
+}
+
+.nav a:hover::after,
+
+.nav a.active::after{
+
+width:22px;
+
+}
+
+/*==========================================
+HEADER ACTIONS
+==========================================*/
+
+.header-actions{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+/*==========================================
+MOBILE MENU BUTTON
+==========================================*/
+
+.menu-toggle{
+
+display:none;
+
+align-items:center;
+justify-content:center;
+
+width:50px;
+height:50px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid var(--border);
+
+border-radius:16px;
+
+cursor:pointer;
+
+transition:all .35s ease;
+
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+
+}
+
+.menu-toggle:hover{
+
+background:rgba(16,185,129,.10);
+
+border-color:rgba(16,185,129,.30);
+
+transform:translateY(-2px);
+
+}
+
+.menu-toggle:active{
+
+transform:scale(.96);
+
+}
+
+.menu-toggle svg{
+
+width:22px;
+height:22px;
+
+stroke:var(--white);
+
+stroke-width:2;
+
+fill:none;
+
+}
+
+/*==========================================
+MOBILE NAVIGATION
+==========================================*/
+
+.mobile-nav{
+
+position:fixed;
+
+top:0;
+right:-100%;
+
+width:min(88%,380px);
+height:100vh;
+
+background:rgba(11,17,32,.96);
+
+backdrop-filter:blur(28px);
+-webkit-backdrop-filter:blur(28px);
+
+border-left:1px solid rgba(255,255,255,.08);
+
+padding:90px 24px 32px;
+
+display:flex;
+flex-direction:column;
+
+transition:right .45s cubic-bezier(.22,.61,.36,1);
+
+z-index:1200;
+
+overflow-y:auto;
+
+}
+
+.mobile-nav.active{
+
+right:0;
+
+}
+
+.mobile-nav ul{
+
+list-style:none;
+
+display:flex;
+flex-direction:column;
+
+gap:12px;
+
+}
+
+.mobile-nav a{
+
+display:flex;
+align-items:center;
+
+padding:16px 18px;
+
+border-radius:16px;
+
+font-size:1rem;
+font-weight:600;
+
+color:var(--silver);
+
+background:rgba(255,255,255,.03);
+
+border:1px solid transparent;
+
+transition:all .35s ease;
+
+}
+
+.mobile-nav a:hover,
+.mobile-nav a.active{
+
+background:rgba(16,185,129,.10);
+
+border-color:rgba(16,185,129,.22);
+
+color:var(--white);
+
+transform:translateX(6px);
+
+}
+
+.mobile-nav .mobile-cta{
+
+margin-top:28px;
+
+display:flex;
+flex-direction:column;
+
+gap:14px;
+
+}
+
+/*==========================================
+OVERLAY
+==========================================*/
+
+.nav-overlay{
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.55);
+
+backdrop-filter:blur(4px);
+
+opacity:0;
+visibility:hidden;
+
+transition:.35s ease;
+
+z-index:1100;
+
+}
+
+.nav-overlay.active{
+
+opacity:1;
+visibility:visible;
+
+}
+
+/*==========================================
+SAFE AREA
+==========================================*/
+
+@supports(padding:max(0px)){
+
+.mobile-nav{
+
+padding-top:max(90px,env(safe-area-inset-top));
+
+padding-bottom:max(32px,env(safe-area-inset-bottom));
+
+}
+
+}
+
+/*==========================================
+RESPONSIVE
+==========================================*/
+
+@media (max-width:991px){
+
+.nav{
+
+display:none;
+
+}
+
+.header-actions .btn{
+
+display:none;
+
+}
+
+.menu-toggle{
+
+display:flex;
+
+}
+
+.header{
+
+height:74px;
+
+}
+
+section{
+
+padding:72px 0;
+
+}
+
+}
+
+@media (max-width:768px){
+
+html{
+
+font-size:15px;
+
+}
+
+.container{
+
+width:min(94%,1280px);
+
+}
+
+.logo-title{
+
+font-size:1rem;
+
+}
+
+.logo-sub{
+
+font-size:.68rem;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.header{
+
+height:70px;
+
+}
+
+.container{
+
+width:92%;
+
+}
+
+section{
+
+padding:64px 0;
+
+}
+
+.logo svg{
+
+width:38px;
+height:38px;
+
+}
+
+.logo-title{
+
+font-size:.95rem;
+
+}
+
+.logo-sub{
+
+display:none;
+
+}
+
+.btn{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+.mobile-nav{
+
+width:100%;
+
+}
+
+}
+/*==========================================
+HERO SECTION
+==========================================*/
+
+.hero{
+
+position:relative;
+
+overflow:hidden;
+
+padding-top:130px;
+
+padding-bottom:90px;
+
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+
+}
+
+.hero-wrapper{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+align-items:center;
+
+gap:70px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.hero-content{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+}
+
+/*==========================================
+HERO BADGE
+==========================================*/
+
+.hero-badge{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:12px 18px;
+
+margin-bottom:28px;
+
+border-radius:999px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(16,185,129,.15);
+
+backdrop-filter:blur(20px);
+
+-webkit-backdrop-filter:blur(20px);
+
+}
+
+.hero-badge span{
+
+font-size:.85rem;
+
+font-weight:600;
+
+letter-spacing:.05em;
+
+color:var(--primary-light);
+
+white-space:nowrap;
+
+}
+
+/*==========================================
+HERO TITLE
+==========================================*/
+
+.hero h1{
+
+font-size:clamp(2.6rem,6vw,4.8rem);
+
+line-height:1.05;
+
+font-weight:800;
+
+margin-bottom:24px;
+
+letter-spacing:-.04em;
+
+max-width:650px;
+
+}
+
+.hero h1 span{
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#10B981,
+
+#34D399,
+
+#D1D5DB
+
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+background-clip:text;
+
+}
+
+/*==========================================
+DESCRIPTION
+==========================================*/
+
+.hero p{
+
+font-size:1.08rem;
+
+line-height:1.9;
+
+max-width:620px;
+
+color:var(--muted);
+
+margin-bottom:36px;
+
+}
+/*==========================================
+HERO BUTTONS
+==========================================*/
+
+.hero-buttons{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+margin-bottom:42px;
+
+}
+
+.hero-buttons .btn{
+
+min-width:220px;
+
+height:58px;
+
+font-size:1rem;
+
+font-weight:600;
+
+border-radius:18px;
+
+transition:
+transform .35s ease,
+box-shadow .35s ease,
+background .35s ease;
+
+}
+
+.hero-buttons .btn-primary{
+
+box-shadow:
+0 0 35px rgba(16,185,129,.25);
+
+}
+
+.hero-buttons .btn-primary:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 20px 45px rgba(16,185,129,.35);
+
+}
+
+.hero-buttons .btn-outline:hover{
+
+background:rgba(255,255,255,.08);
+
+}
+
+/*==========================================
+HERO IMAGE
+==========================================*/
+
+.hero-image{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+position:relative;
+
+}
+
+.hero-image-card{
+
+position:relative;
+
+width:100%;
+
+max-width:520px;
+
+padding:18px;
+
+border-radius:28px;
+
+overflow:hidden;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+
+0 25px 60px rgba(0,0,0,.35),
+
+0 0 45px rgba(16,185,129,.10);
+
+transition:
+
+transform .45s ease,
+
+box-shadow .45s ease,
+
+border-color .45s ease;
+
+}
+
+.hero-image-card:hover{
+
+transform:translateY(-10px);
+
+border-color:rgba(16,185,129,.28);
+
+box-shadow:
+
+0 35px 80px rgba(0,0,0,.45),
+
+0 0 60px rgba(16,185,129,.18);
+
+}
+
+.hero-image-card img{
+
+display:block;
+
+width:100%;
+
+aspect-ratio:1/1;
+
+object-fit:cover;
+
+border-radius:20px;
+
+background:#0F172A;
+
+}
+
+/*==========================================
+IMAGE PLACEHOLDER
+==========================================*/
+
+.hero-image-card::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(255,255,255,.04),
+
+transparent 45%,
+
+rgba(16,185,129,.05)
+
+);
+
+}
+
+.hero-image-card::after{
+
+content:"";
+
+position:absolute;
+
+width:180px;
+
+height:180px;
+
+right:-60px;
+
+top:-60px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(16,185,129,.20),
+
+transparent 70%
+
+);
+
+filter:blur(40px);
+
+pointer-events:none;
+
+}
+/*==========================================
+HERO BACKGROUND EFFECTS
+==========================================*/
+
+.hero-grid{
+
+position:absolute;
+
+inset:0;
+
+background-image:
+
+linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+
+linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+
+background-size:40px 40px;
+
+mask-image:radial-gradient(circle at center, black 40%, transparent 90%);
+-webkit-mask-image:radial-gradient(circle at center, black 40%, transparent 90%);
+
+pointer-events:none;
+
+z-index:0;
+
+}
+
+.hero-glow{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+pointer-events:none;
+
+z-index:0;
+
+}
+
+.hero-glow-1{
+
+width:420px;
+
+height:420px;
+
+top:-120px;
+
+right:-100px;
+
+background:rgba(16,185,129,.18);
+
+animation:heroFloatOne 8s ease-in-out infinite;
+
+}
+
+.hero-glow-2{
+
+width:320px;
+
+height:320px;
+
+bottom:-80px;
+
+left:-100px;
+
+background:rgba(52,211,153,.10);
+
+animation:heroFloatTwo 10s ease-in-out infinite;
+
+}
+
+@keyframes heroFloatOne{
+
+0%,100%{
+
+transform:translateY(0) translateX(0);
+
+}
+
+50%{
+
+transform:translateY(-25px) translateX(-20px);
+
+}
+
+}
+
+@keyframes heroFloatTwo{
+
+0%,100%{
+
+transform:translateY(0) translateX(0);
+
+}
+
+50%{
+
+transform:translateY(30px) translateX(20px);
+
+}
+
+}
+
+/*==========================================
+HERO ENTRANCE
+==========================================*/
+
+.hero-content{
+
+animation:heroContent .9s ease forwards;
+
+}
+
+.hero-image{
+
+animation:heroImage 1s ease forwards;
+
+}
+
+@keyframes heroContent{
+
+from{
+
+opacity:0;
+
+transform:translateY(35px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes heroImage{
+
+from{
+
+opacity:0;
+
+transform:translateX(35px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+/*==========================================
+RESPONSIVE
+==========================================*/
+
+@media (max-width:991px){
+
+.hero{
+
+padding-top:120px;
+
+padding-bottom:70px;
+
+min-height:auto;
+
+}
+
+.hero-wrapper{
+
+grid-template-columns:1fr;
+
+gap:50px;
+
+}
+
+.hero-content{
+
+text-align:center;
+
+align-items:center;
+
+}
+
+.hero h1{
+
+max-width:100%;
+
+}
+
+.hero p{
+
+max-width:100%;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.hero-image{
+
+order:-1;
+
+}
+
+.hero-image-card{
+
+max-width:420px;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.hero{
+
+padding-top:110px;
+
+padding-bottom:60px;
+
+}
+
+.hero h1{
+
+font-size:2.6rem;
+
+}
+
+.hero p{
+
+font-size:1rem;
+
+line-height:1.8;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+width:100%;
+
+}
+
+.hero-buttons .btn{
+
+width:100%;
+
+max-width:340px;
+
+}
+
+.hero-image-card{
+
+max-width:340px;
+
+padding:14px;
+
+}
+
+.hero-badge{
+
+padding:10px 16px;
+
+}
+
+.hero-badge span{
+
+font-size:.8rem;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.hero{
+
+padding-top:100px;
+
+}
+
+.hero h1{
+
+font-size:2.2rem;
+
+}
+
+.hero-image-card{
+
+max-width:300px;
+
+border-radius:22px;
+
+}
+
+.hero-image-card img{
+
+border-radius:16px;
+
+}
+
+}
+/*==========================================
+TRUSTED PARTNERS
+==========================================*/
+
+.trusted-partners{
+
+position:relative;
+
+overflow:hidden;
+
+padding:90px 0;
+
+}
+
+.section-heading{
+
+max-width:720px;
+
+margin:0 auto 50px;
+
+text-align:center;
+
+}
+
+.section-tag{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:10px 18px;
+
+border-radius:999px;
+
+font-size:.82rem;
+
+font-weight:600;
+
+letter-spacing:.08em;
+
+color:var(--primary-light);
+
+margin-bottom:20px;
+
+}
+
+.section-heading h2{
+
+font-size:clamp(2rem,4vw,3.4rem);
+
+margin-bottom:18px;
+
+}
+
+.section-heading p{
+
+max-width:620px;
+
+margin:auto;
+
+}
+
+/*==========================================
+SLIDER
+==========================================*/
+
+.partner-slider{
+
+position:relative;
+
+overflow:hidden;
+
+mask-image:linear-gradient(
+
+90deg,
+
+transparent,
+
+#000 10%,
+
+#000 90%,
+
+transparent
+
+);
+
+-webkit-mask-image:linear-gradient(
+
+90deg,
+
+transparent,
+
+#000 10%,
+
+#000 90%,
+
+transparent
+
+);
+
+}
+
+.partner-track{
+
+display:flex;
+
+gap:22px;
+
+width:max-content;
+
+animation:partnerScroll 30s linear infinite;
+
+}
+
+.partner-slider:hover .partner-track{
+
+animation-play-state:paused;
+
+}
+
+/*==========================================
+PARTNER CARD
+==========================================*/
+
+.partner-card{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+flex-shrink:0;
+
+width:220px;
+
+height:92px;
+
+border-radius:22px;
+
+text-decoration:none;
+
+transition:.35s ease;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.partner-card:hover{
+
+transform:translateY(-8px);
+
+border-color:rgba(16,185,129,.25);
+
+box-shadow:
+
+0 18px 45px rgba(0,0,0,.35),
+
+0 0 28px rgba(16,185,129,.15);
+
+}
+
+.partner-name{
+
+font-family:"Space Grotesk",sans-serif;
+
+font-size:1rem;
+
+font-weight:700;
+
+letter-spacing:.08em;
+
+color:var(--white);
+
+}
+
+.partner-card span{
+
+font-size:.92rem;
+
+font-weight:600;
+
+color:var(--silver);
+
+}
+
+.partner-card.verified{
+
+border-color:rgba(16,185,129,.28);
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(16,185,129,.10),
+
+rgba(255,255,255,.04)
+
+);
+
+}
+/*==========================================
+PARTNER ANIMATION
+==========================================*/
+
+@keyframes partnerScroll{
+
+0%{
+
+transform:translateX(0);
+
+}
+
+100%{
+
+transform:translateX(calc(-242px * 6));
+
+}
+
+}
+
+/*==========================================
+PREMIUM HOVER EFFECTS
+==========================================*/
+
+.partner-card{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.partner-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:70%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.18),
+
+transparent
+
+);
+
+transition:left .8s ease;
+
+}
+
+.partner-card:hover::before{
+
+left:150%;
+
+}
+
+.partner-card::after{
+
+content:"";
+
+position:absolute;
+
+inset:-1px;
+
+border-radius:inherit;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(16,185,129,.20),
+
+transparent,
+
+rgba(255,255,255,.08)
+
+);
+
+opacity:0;
+
+transition:opacity .35s ease;
+
+pointer-events:none;
+
+}
+
+.partner-card:hover::after{
+
+opacity:1;
+
+}
+
+/*==========================================
+RESPONSIVE
+==========================================*/
+
+@media (max-width:991px){
+
+.partner-card{
+
+width:200px;
+
+height:86px;
+
+}
+
+.partner-track{
+
+gap:18px;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.trusted-partners{
+
+padding:70px 0;
+
+}
+
+.section-heading{
+
+margin-bottom:40px;
+
+}
+
+.section-heading h2{
+
+font-size:2rem;
+
+}
+
+.partner-card{
+
+width:180px;
+
+height:78px;
+
+border-radius:18px;
+
+}
+
+.partner-name{
+
+font-size:.92rem;
+
+}
+
+.partner-card span{
+
+font-size:.82rem;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.partner-slider{
+
+margin-inline:-4%;
+
+padding-inline:4%;
+
+}
+
+.partner-card{
+
+width:165px;
+
+height:72px;
+
+}
+
+.partner-track{
+
+gap:14px;
+
+}
+
+.section-tag{
+
+font-size:.75rem;
+
+padding:8px 14px;
+
+}
+
+}
+
+/*==========================================
+ACCESSIBILITY
+==========================================*/
+
+@media (prefers-reduced-motion:reduce){
+
+.partner-track{
+
+animation:none;
+
+}
+
+.partner-card,
+.partner-card::before,
+.partner-card::after{
+
+transition:none;
+
+}
+
+}
+/*==========================================
+SERVICES SECTION
+==========================================*/
+
+.services{
+
+position:relative;
+
+overflow:hidden;
+
+padding:90px 0;
+
+}
+
+.services-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:28px;
+
+margin-top:60px;
+
+}
+
+/*==========================================
+SERVICE CARD
+==========================================*/
+
+.service-card{
+
+position:relative;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+text-decoration:none;
+
+padding:32px;
+
+min-height:320px;
+
+border-radius:24px;
+
+overflow:hidden;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:
+
+transform .4s ease,
+
+border-color .4s ease,
+
+box-shadow .4s ease;
+
+}
+
+.service-card:hover{
+
+transform:translateY(-12px);
+
+border-color:rgba(16,185,129,.25);
+
+box-shadow:
+
+0 25px 60px rgba(0,0,0,.35),
+
+0 0 40px rgba(16,185,129,.12);
+
+}
+
+/*==========================================
+ICON HOLDER
+==========================================*/
+
+.service-icon{
+
+width:74px;
+
+height:74px;
+
+border-radius:22px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+margin-bottom:28px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(16,185,129,.14),
+
+rgba(255,255,255,.04)
+
+);
+
+border:1px solid rgba(16,185,129,.16);
+
+backdrop-filter:blur(20px);
+
+-webkit-backdrop-filter:blur(20px);
+
+transition:.35s ease;
+
+}
+
+.service-card:hover .service-icon{
+
+transform:rotate(-6deg) scale(1.08);
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(16,185,129,.22),
+
+rgba(255,255,255,.08)
+
+);
+
+}
+
+/*==========================================
+SERVICE TEXT
+==========================================*/
+
+.service-card h3{
+
+font-size:1.35rem;
+
+margin-bottom:16px;
+
+line-height:1.3;
+
+color:var(--white);
+
+}
+
+.service-card p{
+
+font-size:.98rem;
+
+line-height:1.8;
+
+color:var(--muted);
+
+margin-top:auto;
+
+}
+
+/*==========================================
+PREMIUM BORDER EFFECT
+==========================================*/
+
+.service-card::before{
+
+content:"";
+
+position:absolute;
+
+inset:-1px;
+
+border-radius:inherit;
+
+padding:1px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(16,185,129,.18),
+
+transparent,
+
+rgba(255,255,255,.08)
+
+);
+
+-webkit-mask:
+
+linear-gradient(#fff 0 0)
+
+content-box,
+
+linear-gradient(#fff 0 0);
+
+-webkit-mask-composite:xor;
+
+mask-composite:exclude;
+
+opacity:0;
+
+transition:.4s ease;
+
+pointer-events:none;
+
+}
+
+.service-card:hover::before{
+
+opacity:1;
+
+}
+/*==========================================
+SERVICE CARD GLOW
+==========================================*/
+
+.service-card::after{
+
+content:"";
+
+position:absolute;
+
+width:220px;
+
+height:220px;
+
+top:-120px;
+
+right:-120px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(16,185,129,.18),
+
+transparent 72%
+
+);
+
+filter:blur(45px);
+
+opacity:0;
+
+transition:
+
+opacity .45s ease,
+
+transform .45s ease;
+
+pointer-events:none;
+
+}
+
+.service-card:hover::after{
+
+opacity:1;
+
+transform:scale(1.15);
+
+}
+
+/*==========================================
+ICON SVG
+==========================================*/
+
+.service-icon svg{
+
+width:34px;
+
+height:34px;
+
+stroke:var(--primary-light);
+
+stroke-width:1.8;
+
+fill:none;
+
+transition:.35s ease;
+
+}
+
+.service-card:hover .service-icon svg{
+
+transform:scale(1.12);
+
+stroke:#ffffff;
+
+}
+
+/*==========================================
+SERVICE GRID RESPONSIVE
+==========================================*/
+
+@media (max-width:1200px){
+
+.services-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:24px;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.services{
+
+padding:70px 0;
+
+}
+
+.services-grid{
+
+grid-template-columns:1fr;
+
+gap:20px;
+
+margin-top:40px;
+
+}
+
+.service-card{
+
+padding:28px;
+
+min-height:280px;
+
+border-radius:22px;
+
+}
+
+.service-card h3{
+
+font-size:1.25rem;
+
+}
+
+.service-card p{
+
+font-size:.95rem;
+
+}
+
+.service-icon{
+
+width:68px;
+
+height:68px;
+
+margin-bottom:22px;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.services{
+
+padding:60px 0;
+
+}
+
+.service-card{
+
+padding:24px;
+
+min-height:auto;
+
+}
+
+.service-card h3{
+
+font-size:1.15rem;
+
+}
+
+.service-card p{
+
+font-size:.92rem;
+
+line-height:1.7;
+
+}
+
+.service-icon{
+
+width:62px;
+
+height:62px;
+
+border-radius:18px;
+
+}
+
+}
+
+/*==========================================
+ACCESSIBILITY
+==========================================*/
+
+.service-card:focus-visible{
+
+border-color:var(--primary);
+
+box-shadow:
+
+0 0 0 3px rgba(16,185,129,.25);
+
+outline:none;
+
+}
+
+@media (prefers-reduced-motion:reduce){
+
+.service-card,
+.service-icon,
+.service-card::before,
+.service-card::after{
+
+transition:none;
+
+}
+
+}
+/*==========================================
+FEATURED PROJECTS
+PART 6B
+==========================================*/
+
+.projects{
+
+position:relative;
+
+padding:90px 0;
+
+overflow:hidden;
+
+}
+
+.project-slider{
+
+position:relative;
+
+margin-top:60px;
+
+overflow:hidden;
+
+}
+
+.project-track{
+
+display:flex;
+
+gap:28px;
+
+transition:transform .7s cubic-bezier(.22,.61,.36,1);
+
+will-change:transform;
+
+}
+
+/*==========================================
+PROJECT CARD
+==========================================*/
+
+.project-card{
+
+position:relative;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+flex-shrink:0;
+
+width:380px;
+
+min-height:470px;
+
+padding:32px;
+
+border-radius:26px;
+
+overflow:hidden;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:
+
+transform .45s ease,
+
+box-shadow .45s ease,
+
+border-color .45s ease;
+
+}
+
+.project-card:hover{
+
+transform:translateY(-10px);
+
+border-color:rgba(16,185,129,.25);
+
+box-shadow:
+
+0 25px 70px rgba(0,0,0,.35),
+
+0 0 35px rgba(16,185,129,.12);
+
+}
+
+/*==========================================
+SVG HOLDER
+==========================================*/
+
+.project-svg{
+
+width:100%;
+
+height:180px;
+
+border-radius:22px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+margin-bottom:28px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(16,185,129,.12),
+
+rgba(255,255,255,.04)
+
+);
+
+border:1px solid rgba(16,185,129,.15);
+
+backdrop-filter:blur(20px);
+
+-webkit-backdrop-filter:blur(20px);
+
+}
+
+/*==========================================
+CATEGORY
+==========================================*/
+
+.project-category{
+
+display:inline-flex;
+
+padding:8px 14px;
+
+border-radius:999px;
+
+font-size:.78rem;
+
+font-weight:600;
+
+letter-spacing:.08em;
+
+color:var(--primary-light);
+
+background:rgba(16,185,129,.08);
+
+margin-bottom:18px;
+
+}
+
+/*==========================================
+TITLE
+==========================================*/
+
+.project-card h3{
+
+font-size:1.5rem;
+
+margin-bottom:16px;
+
+color:var(--white);
+
+}
+
+/*==========================================
+DESCRIPTION
+==========================================*/
+
+.project-card p{
+
+color:var(--muted);
+
+line-height:1.8;
+
+margin-bottom:26px;
+
+}
+
+/*==========================================
+TECH TAGS
+==========================================*/
+
+.project-tech{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+margin-bottom:30px;
+
+}
+
+.project-tech span{
+
+padding:8px 14px;
+
+border-radius:999px;
+
+font-size:.78rem;
+
+font-weight:600;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+color:var(--silver);
+
+}
+
+/*==========================================
+VISIT BUTTON
+==========================================*/
+
+.project-btn{
+
+margin-top:auto;
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+width:100%;
+
+height:54px;
+
+border-radius:16px;
+
+font-weight:600;
+
+color:#fff;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+var(--primary),
+
+var(--primary-light)
+
+);
+
+transition:.35s ease;
+
+box-shadow:
+
+0 0 25px rgba(16,185,129,.25);
+
+}
+
+.project-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 18px 40px rgba(16,185,129,.30);
+
+}
+/*==========================================
+PROJECT NAVIGATION
+PART 6C
+==========================================*/
+
+.project-navigation{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:18px;
+
+margin-top:40px;
+
+}
+
+.project-prev,
+.project-next{
+
+width:54px;
+
+height:54px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border:none;
+
+border-radius:16px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+color:var(--white);
+
+font-size:1.2rem;
+
+cursor:pointer;
+
+backdrop-filter:blur(20px);
+
+-webkit-backdrop-filter:blur(20px);
+
+transition:.35s ease;
+
+}
+
+.project-prev:hover,
+.project-next:hover{
+
+background:rgba(16,185,129,.12);
+
+border-color:rgba(16,185,129,.25);
+
+transform:translateY(-4px);
+
+box-shadow:
+
+0 12px 35px rgba(16,185,129,.20);
+
+}
+
+/*==========================================
+DOTS
+==========================================*/
+
+.project-dots{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:10px;
+
+margin-top:24px;
+
+}
+
+.project-dots span{
+
+width:10px;
+
+height:10px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.18);
+
+transition:.35s ease;
+
+cursor:pointer;
+
+}
+
+.project-dots span.active{
+
+width:34px;
+
+border-radius:999px;
+
+background:var(--primary);
+
+}
+
+/*==========================================
+RESPONSIVE
+==========================================*/
+
+@media (max-width:1200px){
+
+.project-card{
+
+width:340px;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.projects{
+
+padding:70px 0;
+
+}
+
+.project-slider{
+
+overflow-x:auto;
+
+scroll-snap-type:x mandatory;
+
+scroll-behavior:smooth;
+
+padding-bottom:10px;
+
+}
+
+.project-slider::-webkit-scrollbar{
+
+display:none;
+
+}
+
+.project-track{
+
+gap:18px;
+
+}
+
+.project-card{
+
+width:88vw;
+
+min-height:auto;
+
+scroll-snap-align:center;
+
+padding:24px;
+
+}
+
+.project-svg{
+
+height:150px;
+
+}
+
+.project-navigation{
+
+display:none;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.project-card{
+
+width:92vw;
+
+border-radius:22px;
+
+}
+
+.project-card h3{
+
+font-size:1.3rem;
+
+}
+
+.project-card p{
+
+font-size:.92rem;
+
+}
+
+.project-btn{
+
+height:50px;
+
+font-size:.92rem;
+
+}
+
+.project-tech{
+
+gap:8px;
+
+}
+
+.project-tech span{
+
+font-size:.72rem;
+
+padding:7px 12px;
+
+}
+
+}
+
+/*==========================================
+REDUCED MOTION
+==========================================*/
+
+@media (prefers-reduced-motion:reduce){
+
+.project-track,
+.project-card,
+.project-btn,
+.project-prev,
+.project-next{
+
+transition:none;
+
+}
+
+}
+/*==========================================
+AI SHOWCASE
+PART 7B
+==========================================*/
+
+.ai-showcase{
+
+position:relative;
+
+padding:100px 0;
+
+overflow:hidden;
+
+}
+
+.ai-layout{
+
+position:relative;
+
+display:grid;
+
+grid-template-columns:1fr 420px 1fr;
+
+align-items:center;
+
+gap:40px;
+
+margin-top:70px;
+
+min-height:760px;
+
+}
+
+/*==========================================
+AI COLUMNS
+==========================================*/
+
+.ai-column{
+
+display:flex;
+
+flex-direction:column;
+
+gap:26px;
+
+z-index:2;
+
+}
+
+.ai-column.left{
+
+align-items:flex-end;
+
+}
+
+.ai-column.right{
+
+align-items:flex-start;
+
+}
+
+/*==========================================
+AI CARD
+==========================================*/
+
+.ai-card{
+
+width:100%;
+
+max-width:320px;
+
+padding:26px;
+
+border-radius:22px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:
+
+transform .45s ease,
+
+box-shadow .45s ease,
+
+border-color .45s ease;
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+}
+
+.ai-card:hover{
+
+transform:translateY(-8px);
+
+border-color:rgba(16,185,129,.25);
+
+box-shadow:
+
+0 20px 55px rgba(0,0,0,.35),
+
+0 0 28px rgba(16,185,129,.16);
+
+}
+
+.ai-card h3{
+
+margin:18px 0 12px;
+
+font-size:1.25rem;
+
+color:var(--white);
+
+}
+
+.ai-card p{
+
+font-size:.95rem;
+
+line-height:1.8;
+
+color:var(--muted);
+
+}
+
+/*==========================================
+ICON HOLDER
+==========================================*/
+
+.ai-icon{
+
+width:68px;
+
+height:68px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:20px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(16,185,129,.15),
+
+rgba(255,255,255,.04)
+
+);
+
+border:1px solid rgba(16,185,129,.18);
+
+}
+
+/*==========================================
+AI CORE
+==========================================*/
+
+.ai-core-wrapper{
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+z-index:3;
+
+}
+
+.ai-core{
+
+position:relative;
+
+width:260px;
+
+height:260px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(16,185,129,.22),
+
+rgba(11,17,32,.95)
+
+);
+
+border:1px solid rgba(16,185,129,.25);
+
+box-shadow:
+
+0 0 70px rgba(16,185,129,.22);
+
+}
+
+/*==========================================
+CORE CENTER
+==========================================*/
+
+.core-center{
+
+width:110px;
+
+height:110px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+font-family:"Space Grotesk",sans-serif;
+
+font-size:2rem;
+
+font-weight:700;
+
+color:#fff;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+var(--primary),
+
+var(--primary-light)
+
+);
+
+box-shadow:
+
+0 0 35px rgba(16,185,129,.35);
+
+z-index:4;
+
+}
+
+/*==========================================
+RINGS
+==========================================*/
+
+.core-ring{
+
+position:absolute;
+
+border-radius:50%;
+
+border:1px solid rgba(16,185,129,.25);
+
+}
+
+.ring-one{
+
+width:180px;
+
+height:180px;
+
+}
+
+.ring-two{
+
+width:230px;
+
+height:230px;
+
+}
+
+.ring-three{
+
+width:280px;
+
+height:280px;
+
+}
+
+/*==========================================
+NETWORK
+==========================================*/
+
+.ai-network{
+
+position:absolute;
+
+inset:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+z-index:1;
+
+}
+
+.ai-network line{
+
+stroke:rgba(16,185,129,.22);
+
+stroke-width:2;
+
+stroke-linecap:round;
+
+}
+/*==========================================
+PART 7C
+AI ANIMATIONS & RESPONSIVE
+==========================================*/
+
+/* AI CORE ANIMATION */
+
+.ai-core{
+
+animation:
+
+corePulse 4s ease-in-out infinite;
+
+}
+
+@keyframes corePulse{
+
+0%,100%{
+
+transform:scale(1);
+
+box-shadow:
+
+0 0 60px rgba(16,185,129,.18);
+
+}
+
+50%{
+
+transform:scale(1.04);
+
+box-shadow:
+
+0 0 90px rgba(16,185,129,.32);
+
+}
+
+}
+
+/*==========================================
+ROTATING RINGS
+==========================================*/
+
+.ring-one{
+
+animation:
+
+rotateClock 12s linear infinite;
+
+}
+
+.ring-two{
+
+animation:
+
+rotateAnti 16s linear infinite;
+
+}
+
+.ring-three{
+
+animation:
+
+rotateClock 22s linear infinite;
+
+}
+
+@keyframes rotateClock{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+@keyframes rotateAnti{
+
+from{
+
+transform:rotate(360deg);
+
+}
+
+to{
+
+transform:rotate(0deg);
+
+}
+
+}
+
+/*==========================================
+FLOATING CARDS
+==========================================*/
+
+.ai-card{
+
+animation:
+
+floatCard 7s ease-in-out infinite;
+
+}
+
+.ai-column .ai-card:nth-child(2){
+
+animation-delay:1.4s;
+
+}
+
+.ai-column .ai-card:nth-child(3){
+
+animation-delay:2.8s;
+
+}
+
+@keyframes floatCard{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}
+
+/*==========================================
+NETWORK GLOW
+==========================================*/
+
+.ai-network line{
+
+stroke-dasharray:10 10;
+
+animation:
+
+networkMove 5s linear infinite;
+
+}
+
+@keyframes networkMove{
+
+from{
+
+stroke-dashoffset:0;
+
+}
+
+to{
+
+stroke-dashoffset:-120;
+
+}
+
+}
+
+/*==========================================
+ICON
+==========================================*/
+
+.ai-icon{
+
+transition:
+
+transform .4s ease,
+
+box-shadow .4s ease;
+
+}
+
+.ai-card:hover .ai-icon{
+
+transform:
+
+scale(1.12)
+
+rotate(-6deg);
+
+box-shadow:
+
+0 0 25px rgba(16,185,129,.28);
+
+}
+
+/*==========================================
+RESPONSIVE
+==========================================*/
+
+@media(max-width:1100px){
+
+.ai-layout{
+
+grid-template-columns:1fr;
+
+gap:40px;
+
+min-height:auto;
+
+}
+
+.ai-column.left,
+
+.ai-column.right{
+
+align-items:center;
+
+}
+
+.ai-core-wrapper{
+
+order:-1;
+
+margin:20px 0;
+
+}
+
+.ai-network{
+
+display:none;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.ai-showcase{
+
+padding:70px 0;
+
+}
+
+.ai-core{
+
+width:220px;
+
+height:220px;
+
+}
+
+.core-center{
+
+width:90px;
+
+height:90px;
+
+font-size:1.6rem;
+
+}
+
+.ring-one{
+
+width:150px;
+
+height:150px;
+
+}
+
+.ring-two{
+
+width:190px;
+
+height:190px;
+
+}
+
+.ring-three{
+
+width:230px;
+
+height:230px;
+
+}
+
+.ai-card{
+
+max-width:100%;
+
+padding:22px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.ai-core{
+
+width:180px;
+
+height:180px;
+
+}
+
+.core-center{
+
+width:74px;
+
+height:74px;
+
+font-size:1.3rem;
+
+}
+
+.ring-one{
+
+width:120px;
+
+height:120px;
+
+}
+
+.ring-two{
+
+width:150px;
+
+height:150px;
+
+}
+
+.ring-three{
+
+width:180px;
+
+height:180px;
+
+}
+
+.ai-card h3{
+
+font-size:1.08rem;
+
+}
+
+.ai-card p{
+
+font-size:.9rem;
+
+}
+
+}
+
+/*==========================================
+REDUCED MOTION
+==========================================*/
+
+@media(prefers-reduced-motion:reduce){
+
+.ai-core,
+
+.core-ring,
+
+.ai-card,
+
+.ai-network line{
+
+animation:none;
+
+}
+
+}
+/*==========================================
+PART 8B
+WHY NOCTIS
+==========================================*/
+
+.why-noctis{
+
+position:relative;
+
+padding:100px 0;
+
+overflow:hidden;
+
+}
+
+.why-layout{
+
+position:relative;
+
+display:grid;
+
+grid-template-columns:1fr 420px 1fr;
+
+align-items:center;
+
+gap:40px;
+
+margin-top:70px;
+
+min-height:760px;
+
+}
+
+/*==========================================
+FEATURE COLUMNS
+==========================================*/
+
+.why-column{
+
+display:flex;
+
+flex-direction:column;
+
+gap:26px;
+
+z-index:2;
+
+}
+
+.why-column.left{
+
+align-items:flex-end;
+
+}
+
+.why-column.right{
+
+align-items:flex-start;
+
+}
+
+/*==========================================
+FEATURE CARD
+==========================================*/
+
+.why-card{
+
+position:relative;
+
+width:100%;
+
+max-width:320px;
+
+padding:26px;
+
+border-radius:22px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+overflow:hidden;
+
+transition:
+
+transform .45s ease,
+
+box-shadow .45s ease,
+
+border-color .45s ease;
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+}
+
+.why-card:hover{
+
+transform:translateY(-8px);
+
+border-color:rgba(16,185,129,.25);
+
+box-shadow:
+
+0 20px 60px rgba(0,0,0,.35),
+
+0 0 30px rgba(16,185,129,.16);
+
+}
+
+.why-card h3{
+
+margin:18px 0 12px;
+
+font-size:1.25rem;
+
+color:var(--white);
+
+}
+
+.why-card p{
+
+font-size:.95rem;
+
+line-height:1.8;
+
+color:var(--muted);
+
+}
+
+/*==========================================
+ICON HOLDER
+==========================================*/
+
+.why-icon{
+
+width:68px;
+
+height:68px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:20px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(16,185,129,.15),
+
+rgba(255,255,255,.04)
+
+);
+
+border:1px solid rgba(16,185,129,.18);
+
+transition:.35s ease;
+
+}
+
+.why-card:hover .why-icon{
+
+transform:rotate(-6deg) scale(1.08);
+
+}
+
+/*==========================================
+CENTER CORE
+==========================================*/
+
+.why-core-wrapper{
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+z-index:3;
+
+}
+
+.why-core{
+
+position:relative;
+
+width:260px;
+
+height:260px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(16,185,129,.20),
+
+rgba(11,17,32,.95)
+
+);
+
+border:1px solid rgba(16,185,129,.22);
+
+box-shadow:
+
+0 0 70px rgba(16,185,129,.20);
+
+}
+
+/*==========================================
+CENTER TEXT
+==========================================*/
+
+.why-center{
+
+width:115px;
+
+height:115px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+var(--primary),
+
+var(--primary-light)
+
+);
+
+font-family:"Space Grotesk",sans-serif;
+
+font-size:1.2rem;
+
+font-weight:700;
+
+letter-spacing:.08em;
+
+color:#fff;
+
+box-shadow:
+
+0 0 35px rgba(16,185,129,.30);
+
+z-index:5;
+
+}
+
+/*==========================================
+RINGS
+==========================================*/
+
+.why-ring{
+
+position:absolute;
+
+border-radius:50%;
+
+border:1px solid rgba(16,185,129,.25);
+
+}
+
+.why-ring.ring-one{
+
+width:180px;
+
+height:180px;
+
+}
+
+.why-ring.ring-two{
+
+width:230px;
+
+height:230px;
+
+}
+
+.why-ring.ring-three{
+
+width:280px;
+
+height:280px;
+
+}
+
+/*==========================================
+NETWORK
+==========================================*/
+
+.why-network{
+
+position:absolute;
+
+inset:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+z-index:1;
+
+}
+
+.why-network line{
+
+stroke:rgba(16,185,129,.22);
+
+stroke-width:2;
+
+stroke-linecap:round;
+
+}
+/*==========================================
+PART 8C
+WHY NOCTIS ANIMATIONS
+==========================================*/
+
+/* CORE PULSE */
+
+.why-core{
+
+animation:
+
+whyCorePulse 5s ease-in-out infinite;
+
+}
+
+@keyframes whyCorePulse{
+
+0%,100%{
+
+transform:scale(1);
+
+box-shadow:
+
+0 0 60px rgba(16,185,129,.18);
+
+}
+
+50%{
+
+transform:scale(1.05);
+
+box-shadow:
+
+0 0 95px rgba(16,185,129,.35);
+
+}
+
+}
+
+/*==========================================
+ROTATING RINGS
+==========================================*/
+
+.why-ring.ring-one{
+
+animation:rotateClock 14s linear infinite;
+
+}
+
+.why-ring.ring-two{
+
+animation:rotateAnti 18s linear infinite;
+
+}
+
+.why-ring.ring-three{
+
+animation:rotateClock 24s linear infinite;
+
+}
+
+/*==========================================
+FLOATING CARDS
+==========================================*/
+
+.why-card{
+
+animation:whyFloat 8s ease-in-out infinite;
+
+}
+
+.why-column .why-card:nth-child(2){
+
+animation-delay:1.5s;
+
+}
+
+.why-column .why-card:nth-child(3){
+
+animation-delay:3s;
+
+}
+
+@keyframes whyFloat{
+
+0%,100%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}
+
+/*==========================================
+NETWORK
+==========================================*/
+
+.why-network line{
+
+stroke-dasharray:10 10;
+
+animation:
+
+whyNetworkMove 5s linear infinite;
+
+}
+
+@keyframes whyNetworkMove{
+
+from{
+
+stroke-dashoffset:0;
+
+}
+
+to{
+
+stroke-dashoffset:-120;
+
+}
+
+}
+
+/*==========================================
+ICON
+==========================================*/
+
+.why-icon{
+
+transition:
+
+transform .35s ease,
+
+box-shadow .35s ease;
+
+}
+
+.why-card:hover .why-icon{
+
+transform:
+
+scale(1.12)
+
+rotate(-8deg);
+
+box-shadow:
+
+0 0 24px rgba(16,185,129,.28);
+
+}
+
+/*==========================================
+RESPONSIVE
+==========================================*/
+
+@media(max-width:1100px){
+
+.why-layout{
+
+grid-template-columns:1fr;
+
+gap:42px;
+
+min-height:auto;
+
+}
+
+.why-column.left,
+
+.why-column.right{
+
+align-items:center;
+
+}
+
+.why-core-wrapper{
+
+order:-1;
+
+margin:20px 0;
+
+}
+
+.why-network{
+
+display:none;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.why-noctis{
+
+padding:70px 0;
+
+}
+
+.why-core{
+
+width:220px;
+
+height:220px;
+
+}
+
+.why-center{
+
+width:90px;
+
+height:90px;
+
+font-size:1rem;
+
+}
+
+.why-ring.ring-one{
+
+width:150px;
+
+height:150px;
+
+}
+
+.why-ring.ring-two{
+
+width:190px;
+
+height:190px;
+
+}
+
+.why-ring.ring-three{
+
+width:230px;
+
+height:230px;
+
+}
+
+.why-card{
+
+max-width:100%;
+
+padding:22px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.why-core{
+
+width:180px;
+
+height:180px;
+
+}
+
+.why-center{
+
+width:74px;
+
+height:74px;
+
+font-size:.85rem;
+
+}
+
+.why-ring.ring-one{
+
+width:120px;
+
+height:120px;
+
+}
+
+.why-ring.ring-two{
+
+width:150px;
+
+height:150px;
+
+}
+
+.why-ring.ring-three{
+
+width:180px;
+
+height:180px;
+
+}
+
+.why-card h3{
+
+font-size:1.08rem;
+
+}
+
+.why-card p{
+
+font-size:.9rem;
+
+line-height:1.7;
+
+}
+
+}
+
+/*==========================================
+ACCESSIBILITY
+==========================================*/
+
+@media(prefers-reduced-motion:reduce){
+
+.why-core,
+
+.why-ring,
+
+.why-card,
+
+.why-network line{
+
+animation:none;
+
+}
+
+}
+/*==========================================
+PART 9B
+PRICING SECTION
+==========================================*/
+
+.pricing{
+
+position:relative;
+
+padding:100px 0;
+
+overflow:hidden;
+
+}
+
+/*==========================================
+PRICING HERO
+==========================================*/
+
+.pricing-hero{
+
+position:relative;
+
+max-width:760px;
+
+margin:60px auto;
+
+padding:50px 40px;
+
+text-align:center;
+
+border-radius:28px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(16,185,129,.15);
+
+overflow:hidden;
+
+}
+
+.pricing-label{
+
+display:inline-block;
+
+margin-bottom:20px;
+
+font-size:.82rem;
+
+font-weight:700;
+
+letter-spacing:.18em;
+
+color:var(--primary-light);
+
+}
+
+.pricing-value{
+
+font-family:"Space Grotesk",sans-serif;
+
+font-size:clamp(3.2rem,8vw,5.8rem);
+
+font-weight:800;
+
+line-height:1;
+
+color:var(--white);
+
+margin-bottom:20px;
+
+}
+
+.pricing-value span{
+
+color:var(--primary);
+
+}
+
+.pricing-hero p{
+
+max-width:520px;
+
+margin:auto;
+
+line-height:1.8;
+
+color:var(--muted);
+
+}
+
+/*==========================================
+PRICING GRID
+==========================================*/
+
+.pricing-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:28px;
+
+margin-top:70px;
+
+}
+
+/*==========================================
+PRICING CARD
+==========================================*/
+
+.pricing-card{
+
+position:relative;
+
+padding:34px;
+
+border-radius:24px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+overflow:hidden;
+
+transition:
+
+transform .4s ease,
+
+box-shadow .4s ease,
+
+border-color .4s ease;
+
+}
+
+.pricing-card:hover{
+
+transform:translateY(-10px);
+
+border-color:rgba(16,185,129,.25);
+
+box-shadow:
+
+0 24px 60px rgba(0,0,0,.35),
+
+0 0 35px rgba(16,185,129,.15);
+
+}
+
+.pricing-card h3{
+
+margin:24px 0 14px;
+
+font-size:1.35rem;
+
+color:var(--white);
+
+}
+
+.pricing-card p{
+
+line-height:1.8;
+
+color:var(--muted);
+
+margin-bottom:28px;
+
+}
+
+/*==========================================
+ICON HOLDER
+==========================================*/
+
+.pricing-icon{
+
+width:72px;
+
+height:72px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:20px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(16,185,129,.14),
+
+rgba(255,255,255,.05)
+
+);
+
+border:1px solid rgba(16,185,129,.18);
+
+transition:.35s ease;
+
+}
+
+.pricing-card:hover .pricing-icon{
+
+transform:scale(1.08) rotate(-6deg);
+
+}
+
+/*==========================================
+BUTTON
+==========================================*/
+
+.pricing-btn{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+height:54px;
+
+border-radius:16px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+var(--primary),
+
+var(--primary-light)
+
+);
+
+color:#fff;
+
+font-weight:600;
+
+transition:.35s ease;
+
+box-shadow:
+
+0 0 24px rgba(16,185,129,.25);
+
+}
+
+.pricing-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 18px 40px rgba(16,185,129,.30);
+
+}
+/*==========================================
+PART 9C
+PRICING ANIMATION & RESPONSIVE
+==========================================*/
+
+/*==========================================
+HERO GLOW
+==========================================*/
+
+.pricing-hero::before{
+
+content:"";
+
+position:absolute;
+
+width:260px;
+
+height:260px;
+
+top:-120px;
+
+right:-120px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(16,185,129,.20),
+
+transparent 72%
+
+);
+
+filter:blur(50px);
+
+pointer-events:none;
+
+animation:
+
+pricingGlow 6s ease-in-out infinite;
+
+}
+
+@keyframes pricingGlow{
+
+0%,100%{
+
+transform:scale(1);
+
+opacity:.7;
+
+}
+
+50%{
+
+transform:scale(1.25);
+
+opacity:1;
+
+}
+
+}
+
+/*==========================================
+BOTTOM CTA
+==========================================*/
+
+.pricing-bottom{
+
+margin-top:70px;
+
+padding:45px 35px;
+
+text-align:center;
+
+border-radius:28px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.pricing-bottom h3{
+
+font-size:2rem;
+
+margin-bottom:18px;
+
+color:var(--white);
+
+}
+
+.pricing-bottom p{
+
+max-width:620px;
+
+margin:0 auto 30px;
+
+line-height:1.8;
+
+color:var(--muted);
+
+}
+
+.pricing-actions{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+/*==========================================
+CARD APPEAR
+==========================================*/
+
+.pricing-card{
+
+opacity:0;
+
+transform:
+
+translateY(40px);
+
+animation:
+
+pricingReveal .8s forwards;
+
+}
+
+.pricing-card:nth-child(1){
+
+animation-delay:.1s;
+
+}
+
+.pricing-card:nth-child(2){
+
+animation-delay:.2s;
+
+}
+
+.pricing-card:nth-child(3){
+
+animation-delay:.3s;
+
+}
+
+.pricing-card:nth-child(4){
+
+animation-delay:.4s;
+
+}
+
+@keyframes pricingReveal{
+
+to{
+
+opacity:1;
+
+transform:
+
+translateY(0);
+
+}
+
+}
+
+/*==========================================
+RESPONSIVE
+==========================================*/
+
+@media(max-width:992px){
+
+.pricing-grid{
+
+grid-template-columns:1fr;
+
+gap:22px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.pricing{
+
+padding:70px 0;
+
+}
+
+.pricing-hero{
+
+padding:35px 24px;
+
+margin:45px auto;
+
+}
+
+.pricing-value{
+
+font-size:3.8rem;
+
+}
+
+.pricing-card{
+
+padding:26px;
+
+}
+
+.pricing-bottom{
+
+padding:35px 22px;
+
+}
+
+.pricing-bottom h3{
+
+font-size:1.6rem;
+
+}
+
+.pricing-actions{
+
+flex-direction:column;
+
+}
+
+.pricing-actions .btn{
+
+width:100%;
+
+max-width:320px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.pricing-value{
+
+font-size:3rem;
+
+}
+
+.pricing-card h3{
+
+font-size:1.18rem;
+
+}
+
+.pricing-card p{
+
+font-size:.92rem;
+
+}
+
+.pricing-icon{
+
+width:64px;
+
+height:64px;
+
+}
+
+.pricing-btn{
+
+height:50px;
+
+font-size:.92rem;
+
+}
+
+}
+
+/*==========================================
+ACCESSIBILITY
+==========================================*/
+
+@media(prefers-reduced-motion:reduce){
+
+.pricing-card,
+
+.pricing-hero::before{
+
+animation:none;
+
+transition:none;
+
+}
+
+}
+/*==========================================
+PART 10B
+FAQ SECTION
+==========================================*/
+
+.faq{
+
+position:relative;
+
+padding:100px 0;
+
+overflow:hidden;
+
+}
+
+.faq-wrapper{
+
+max-width:900px;
+
+margin:70px auto 0;
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+/*==========================================
+FAQ ITEM
+==========================================*/
+
+.faq-item{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:24px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:
+
+border-color .4s ease,
+
+box-shadow .4s ease,
+
+transform .4s ease;
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+}
+
+.faq-item:hover{
+
+transform:translateY(-4px);
+
+border-color:rgba(16,185,129,.25);
+
+box-shadow:
+
+0 20px 55px rgba(0,0,0,.30),
+
+0 0 28px rgba(16,185,129,.15);
+
+}
+
+/*==========================================
+QUESTION
+==========================================*/
+
+.faq-question{
+
+width:100%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:20px;
+
+padding:26px 30px;
+
+background:none;
+
+border:none;
+
+cursor:pointer;
+
+text-align:left;
+
+font-family:inherit;
+
+}
+
+.faq-question span{
+
+font-size:1.08rem;
+
+font-weight:600;
+
+color:var(--white);
+
+line-height:1.6;
+
+}
+
+/*==========================================
+SVG ICON
+==========================================*/
+
+.faq-icon{
+
+flex-shrink:0;
+
+color:var(--primary-light);
+
+transition:
+
+transform .35s ease,
+
+color .35s ease;
+
+}
+
+.faq-item.active .faq-icon{
+
+transform:rotate(45deg);
+
+color:#ffffff;
+
+}
+
+/*==========================================
+ANSWER
+==========================================*/
+
+.faq-answer{
+
+max-height:0;
+
+overflow:hidden;
+
+transition:
+
+max-height .5s ease,
+
+padding .5s ease;
+
+padding:0 30px;
+
+}
+
+.faq-item.active .faq-answer{
+
+max-height:280px;
+
+padding:
+
+0 30px 28px;
+
+}
+
+.typing-text{
+
+color:var(--muted);
+
+font-size:.96rem;
+
+line-height:1.9;
+
+min-height:30px;
+
+}
+
+/*==========================================
+GLOW EFFECT
+==========================================*/
+
+.faq-item::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:4px;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+var(--primary),
+
+transparent
+
+);
+
+opacity:0;
+
+transition:opacity .35s ease;
+
+}
+
+.faq-item.active::before{
+
+opacity:1;
+
+}
+/*==========================================
+PART 10C
+FAQ ANIMATIONS & RESPONSIVE
+==========================================*/
+
+/*==========================================
+ACTIVE ITEM
+==========================================*/
+
+.faq-item.active{
+
+border-color:rgba(16,185,129,.25);
+
+box-shadow:
+
+0 22px 60px rgba(0,0,0,.35),
+
+0 0 35px rgba(16,185,129,.18);
+
+}
+
+/*==========================================
+QUESTION HOVER
+==========================================*/
+
+.faq-question:hover{
+
+background:
+
+rgba(255,255,255,.02);
+
+}
+
+.faq-question:hover .faq-icon{
+
+transform:scale(1.08);
+
+}
+
+/*==========================================
+TYPING CURSOR
+==========================================*/
+
+.typing-text::after{
+
+content:"";
+
+display:inline-block;
+
+width:2px;
+
+height:1.1em;
+
+margin-left:4px;
+
+background:var(--primary);
+
+vertical-align:middle;
+
+animation:
+
+typingCursor .8s infinite;
+
+}
+
+@keyframes typingCursor{
+
+0%,50%{
+
+opacity:1;
+
+}
+
+51%,100%{
+
+opacity:0;
+
+}
+
+}
+
+/*==========================================
+EMERALD GLOW
+==========================================*/
+
+.faq-item.active{
+
+animation:
+
+faqGlow 3s ease-in-out infinite;
+
+}
+
+@keyframes faqGlow{
+
+0%,100%{
+
+box-shadow:
+
+0 20px 55px rgba(0,0,0,.30),
+
+0 0 28px rgba(16,185,129,.14);
+
+}
+
+50%{
+
+box-shadow:
+
+0 22px 65px rgba(0,0,0,.35),
+
+0 0 40px rgba(16,185,129,.22);
+
+}
+
+}
+
+/*==========================================
+RESPONSIVE
+==========================================*/
+
+@media(max-width:768px){
+
+.faq{
+
+padding:70px 0;
+
+}
+
+.faq-wrapper{
+
+margin-top:45px;
+
+gap:16px;
+
+}
+
+.faq-question{
+
+padding:22px;
+
+}
+
+.faq-question span{
+
+font-size:1rem;
+
+}
+
+.faq-item.active .faq-answer{
+
+padding:
+
+0 22px 22px;
+
+}
+
+.faq-answer{
+
+padding:0 22px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.faq-question{
+
+padding:18px;
+
+gap:16px;
+
+}
+
+.faq-question span{
+
+font-size:.95rem;
+
+line-height:1.5;
+
+}
+
+.faq-answer{
+
+padding:0 18px;
+
+}
+
+.faq-item.active .faq-answer{
+
+padding:
+
+0 18px 20px;
+
+}
+
+.typing-text{
+
+font-size:.9rem;
+
+line-height:1.8;
+
+}
+
+.faq-icon{
+
+width:20px;
+
+height:20px;
+
+}
+
+}
+
+/*==========================================
+ACCESSIBILITY
+==========================================*/
+
+@media(prefers-reduced-motion:reduce){
+
+.faq-item,
+
+.faq-answer,
+
+.faq-icon,
+
+.typing-text::after{
+
+animation:none;
+
+transition:none;
+
+}
+
+}
+/*==========================================
+PART 11B
+CONTACT SECTION
+==========================================*/
+
+.contact-section{
+
+position:relative;
+
+padding:100px 0;
+
+overflow:hidden;
+
+}
+
+.contact-wrapper{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:50px;
+
+align-items:center;
+
+margin-top:60px;
+
+}
+
+/*==========================================
+LEFT CONTENT
+==========================================*/
+
+.contact-content{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.contact-content h2{
+
+margin:22px 0;
+
+font-size:clamp(2.2rem,5vw,3.8rem);
+
+line-height:1.15;
+
+}
+
+.contact-content p{
+
+color:var(--muted);
+
+line-height:1.9;
+
+max-width:560px;
+
+}
+
+/*==========================================
+HIGHLIGHTS
+==========================================*/
+
+.contact-highlights{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+margin-top:40px;
+
+}
+
+.highlight-item{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+padding:18px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.35s ease;
+
+}
+
+.highlight-item:hover{
+
+transform:translateX(8px);
+
+border-color:rgba(16,185,129,.25);
+
+box-shadow:
+
+0 18px 40px rgba(16,185,129,.12);
+
+}
+
+.highlight-icon{
+
+width:64px;
+
+height:64px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:18px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(16,185,129,.15),
+
+rgba(255,255,255,.05)
+
+);
+
+border:1px solid rgba(16,185,129,.18);
+
+}
+
+/*==========================================
+FORM CARD
+==========================================*/
+
+.contact-form-card{
+
+padding:34px;
+
+border-radius:28px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+-webkit-backdrop-filter:blur(20px);
+
+}
+
+#contactForm{
+
+display:flex;
+
+flex-direction:column;
+
+gap:22px;
+
+}
+
+.form-group{
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+}
+
+.form-group label{
+
+font-size:.9rem;
+
+font-weight:600;
+
+color:var(--silver);
+
+}
+
+.form-group input,
+
+.form-group select,
+
+.form-group textarea{
+
+width:100%;
+
+padding:16px 18px;
+
+border-radius:16px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+color:var(--white);
+
+font-family:inherit;
+
+font-size:.96rem;
+
+transition:
+
+border-color .35s ease,
+
+box-shadow .35s ease,
+
+background .35s ease;
+
+resize:none;
+
+}
+
+.form-group input:focus,
+
+.form-group select:focus,
+
+.form-group textarea:focus{
+
+outline:none;
+
+border-color:rgba(16,185,129,.35);
+
+background:rgba(255,255,255,.08);
+
+box-shadow:
+
+0 0 0 4px rgba(16,185,129,.12);
+
+}
+
+.form-group input::placeholder,
+
+.form-group textarea::placeholder{
+
+color:rgba(209,213,219,.55);
+
+}
+
+/*==========================================
+SUBMIT BUTTON
+==========================================*/
+
+.contact-submit{
+
+width:100%;
+
+height:58px;
+
+margin-top:10px;
+
+border:none;
+
+cursor:pointer;
+
+font-size:1rem;
+
+font-weight:700;
+
+border-radius:18px;
+
+transition:
+
+transform .35s ease,
+
+box-shadow .35s ease;
+
+}
+
+.contact-submit:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 18px 40px rgba(16,185,129,.28);
+
+}
+/*==========================================
+PART 11C
+CONTACT ANIMATIONS & RESPONSIVE
+==========================================*/
+
+/*==========================================
+QUICK CONTACT
+==========================================*/
+
+.quick-contact{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:24px;
+
+margin-top:70px;
+
+}
+
+.quick-card{
+
+position:relative;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+padding:34px 24px;
+
+border-radius:24px;
+
+text-decoration:none;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:
+
+transform .4s ease,
+
+border-color .4s ease,
+
+box-shadow .4s ease;
+
+overflow:hidden;
+
+}
+
+.quick-card:hover{
+
+transform:translateY(-10px);
+
+border-color:rgba(16,185,129,.25);
+
+box-shadow:
+
+0 24px 60px rgba(0,0,0,.35),
+
+0 0 35px rgba(16,185,129,.18);
+
+}
+
+.quick-icon{
+
+width:72px;
+
+height:72px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:20px;
+
+margin-bottom:20px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+rgba(16,185,129,.14),
+
+rgba(255,255,255,.05)
+
+);
+
+border:1px solid rgba(16,185,129,.18);
+
+transition:.35s ease;
+
+}
+
+.quick-card:hover .quick-icon{
+
+transform:scale(1.08) rotate(-6deg);
+
+}
+
+.quick-card h3{
+
+margin-bottom:10px;
+
+font-size:1.2rem;
+
+color:var(--white);
+
+}
+
+.quick-card p{
+
+color:var(--muted);
+
+font-size:.92rem;
+
+}
+
+/*==========================================
+BOTTOM CTA
+==========================================*/
+
+.contact-closing{
+
+text-align:center;
+
+margin-top:80px;
+
+}
+
+.contact-closing h3{
+
+font-size:clamp(2rem,5vw,3rem);
+
+margin-bottom:18px;
+
+line-height:1.2;
+
+}
+
+.contact-closing p{
+
+max-width:640px;
+
+margin:auto;
+
+line-height:1.9;
+
+color:var(--muted);
+
+}
+
+/*==========================================
+FORM ANIMATION
+==========================================*/
+
+.contact-form-card{
+
+animation:
+
+contactFade .9s ease forwards;
+
+}
+
+.contact-content{
+
+animation:
+
+contactSlide .9s ease forwards;
+
+}
+
+@keyframes contactFade{
+
+from{
+
+opacity:0;
+
+transform:translateX(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+@keyframes contactSlide{
+
+from{
+
+opacity:0;
+
+transform:translateX(-40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+/*==========================================
+RESPONSIVE
+==========================================*/
+
+@media(max-width:992px){
+
+.contact-wrapper{
+
+grid-template-columns:1fr;
+
+}
+
+.quick-contact{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.contact-section{
+
+padding:70px 0;
+
+}
+
+.contact-form-card{
+
+padding:24px;
+
+}
+
+.contact-highlights{
+
+margin-top:30px;
+
+}
+
+.highlight-item{
+
+padding:16px;
+
+}
+
+.quick-card{
+
+padding:28px 20px;
+
+}
+
+.contact-closing{
+
+margin-top:60px;
+
+}
+
+.contact-closing h3{
+
+font-size:1.8rem;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.contact-form-card{
+
+padding:20px;
+
+border-radius:22px;
+
+}
+
+.form-group input,
+
+.form-group select,
+
+.form-group textarea{
+
+padding:14px 16px;
+
+font-size:.92rem;
+
+}
+
+.contact-submit{
+
+height:54px;
+
+font-size:.95rem;
+
+}
+
+.highlight-icon,
+
+.quick-icon{
+
+width:60px;
+
+height:60px;
+
+}
+
+.quick-card h3{
+
+font-size:1.08rem;
+
+}
+
+.quick-card p{
+
+font-size:.88rem;
+
+}
+
+}
+
+/*==========================================
+ACCESSIBILITY
+==========================================*/
+
+@media(prefers-reduced-motion:reduce){
+
+.contact-content,
+
+.contact-form-card,
+
+.quick-card,
+
+.highlight-item{
+
+animation:none;
+
+transition:none;
+
+}
+
+}
+/*==========================================
+PART 12B
+PREMIUM FOOTER
+==========================================*/
+
+.footer{
+
+position:relative;
+
+padding:100px 0 40px;
+
+overflow:hidden;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+#07111f,
+
+#030712
+
+);
+
+}
+
+/*==========================================
+BACKGROUND
+==========================================*/
+
+.footer-bg{
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+background:
+
+radial-gradient(
+
+circle at top,
+
+rgba(16,185,129,.08),
+
+transparent 60%
+
+);
+
+opacity:.9;
+
+}
+
+/*==========================================
+GRID
+==========================================*/
+
+.footer-grid{
+
+position:relative;
+
+display:grid;
+
+grid-template-columns:
+
+2fr
+
+1fr
+
+1fr
+
+1.2fr;
+
+gap:45px;
+
+z-index:2;
+
+}
+
+/*==========================================
+LOGO
+==========================================*/
+
+.footer-logo{
+
+display:inline-block;
+
+font-family:"Space Grotesk",sans-serif;
+
+font-size:2rem;
+
+font-weight:800;
+
+color:#fff;
+
+margin-bottom:22px;
+
+}
+
+.footer-logo span{
+
+display:block;
+
+font-size:.8rem;
+
+letter-spacing:.35em;
+
+margin-top:6px;
+
+color:var(--primary-light);
+
+}
+
+/*==========================================
+BRAND
+==========================================*/
+
+.footer-brand p{
+
+max-width:360px;
+
+line-height:1.9;
+
+color:var(--muted);
+
+margin-bottom:28px;
+
+}
+
+.footer-buttons{
+
+display:flex;
+
+gap:16px;
+
+flex-wrap:wrap;
+
+}
+
+/*==========================================
+COLUMNS
+==========================================*/
+
+.footer-column h3{
+
+margin-bottom:22px;
+
+font-size:1.15rem;
+
+color:#fff;
+
+}
+
+.footer-column ul{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+list-style:none;
+
+}
+
+.footer-column li{
+
+color:var(--muted);
+
+transition:.35s ease;
+
+}
+
+.footer-column a{
+
+color:inherit;
+
+text-decoration:none;
+
+transition:.35s ease;
+
+}
+
+.footer-column li:hover,
+
+.footer-column a:hover{
+
+color:var(--primary-light);
+
+transform:translateX(6px);
+
+}
+
+/*==========================================
+CONTACT
+==========================================*/
+
+.footer-contact li{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+/*==========================================
+DIVIDER
+==========================================*/
+
+.footer-divider{
+
+height:1px;
+
+margin:60px 0 30px;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.12),
+
+transparent
+
+);
+
+}
+/*==========================================
+PART 12C
+FOOTER BOTTOM & RESPONSIVE
+==========================================*/
+
+/*==========================================
+BOTTOM BAR
+==========================================*/
+
+.footer-bottom{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.footer-bottom p{
+
+color:var(--muted);
+
+font-size:.92rem;
+
+line-height:1.8;
+
+}
+
+.footer-bottom-links{
+
+display:flex;
+
+align-items:center;
+
+gap:24px;
+
+flex-wrap:wrap;
+
+}
+
+.footer-bottom-links a{
+
+color:var(--muted);
+
+text-decoration:none;
+
+font-size:.92rem;
+
+transition:
+
+color .35s ease,
+
+transform .35s ease;
+
+}
+
+.footer-bottom-links a:hover{
+
+color:var(--primary-light);
+
+transform:translateY(-2px);
+
+}
+
+/*==========================================
+BACK TO TOP
+==========================================*/
+
+.back-to-top{
+
+position:fixed;
+
+right:24px;
+
+bottom:24px;
+
+width:58px;
+
+height:58px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border:none;
+
+border-radius:18px;
+
+cursor:pointer;
+
+font-size:1.2rem;
+
+color:#fff;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+var(--primary),
+
+var(--primary-light)
+
+);
+
+box-shadow:
+
+0 15px 40px rgba(16,185,129,.25);
+
+opacity:0;
+
+visibility:hidden;
+
+transform:translateY(20px);
+
+transition:
+
+opacity .35s ease,
+
+transform .35s ease,
+
+box-shadow .35s ease;
+
+z-index:999;
+
+}
+
+.back-to-top.show{
+
+opacity:1;
+
+visibility:visible;
+
+transform:translateY(0);
+
+}
+
+.back-to-top:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+
+0 22px 50px rgba(16,185,129,.35);
+
+}
+
+/*==========================================
+FOOTER REVEAL
+==========================================*/
+
+.footer{
+
+animation:
+
+footerReveal 1s ease;
+
+}
+
+@keyframes footerReveal{
+
+from{
+
+opacity:0;
+
+transform:translateY(60px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/*==========================================
+RESPONSIVE
+==========================================*/
+
+@media(max-width:1100px){
+
+.footer-grid{
+
+grid-template-columns:
+
+1fr
+
+1fr;
+
+gap:40px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.footer{
+
+padding:70px 0 30px;
+
+}
+
+.footer-grid{
+
+grid-template-columns:1fr;
+
+gap:34px;
+
+}
+
+.footer-brand p{
+
+max-width:100%;
+
+}
+
+.footer-buttons{
+
+flex-direction:column;
+
+}
+
+.footer-buttons .btn{
+
+width:100%;
+
+}
+
+.footer-bottom{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.footer-bottom-links{
+
+justify-content:center;
+
+}
+
+.back-to-top{
+
+right:18px;
+
+bottom:18px;
+
+width:52px;
+
+height:52px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.footer-logo{
+
+font-size:1.7rem;
+
+}
+
+.footer-column h3{
+
+font-size:1.05rem;
+
+}
+
+.footer-column li,
+
+.footer-bottom p,
+
+.footer-bottom-links a{
+
+font-size:.88rem;
+
+}
+
+.back-to-top{
+
+width:48px;
+
+height:48px;
+
+font-size:1rem;
+
+}
+
+}
+
+/*==========================================
+ACCESSIBILITY
+==========================================*/
+
+@media(prefers-reduced-motion:reduce){
+
+.footer,
+
+.footer-column a,
+
+.back-to-top{
+
+animation:none;
+
+transition:none;
+
+}
+
+}
+</style>
+<head>
+<!-- ==========================================
+HEADER START
+=========================================== -->
+
+<header class="header" id="header">
+
+    <div class="header-inner">
+
+        <!-- Logo -->
+
+        <a href="index.html"
+           class="logo"
+           aria-label="Noctis Technologies Home">
+
+            <img
+                src="assets/logo/logo.svg"
+                alt="Noctis Technologies Logo"
+                width="180"
+                height="48"
+                loading="eager"
+                decoding="async">
+
+        </a>
+
+        <!-- Desktop Navigation -->
+
+        <nav class="nav"
+             aria-label="Primary Navigation">
+
+            <ul>
+
+                <li>
+                    <a href="index.html"
+                       class="active">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="services.html">
+                        Services
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projects.html">
+                        Projects
+                    </a>
+                </li>
+
+                <li>
+                    <a href="tech-stack.html">
+                        Tech Stack
+                    </a>
+                </li>
+
+                <li>
+                    <a href="team.html">
+                        Team
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <!-- Header Actions -->
+
+        <div class="header-actions">
+
+            <a
+               href="contact.html"
+               class="btn btn-primary">
+
+                Start Project
+
+            </a>
+
+            <!-- Mobile Menu Button -->
+
+            <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open Navigation"
+                    aria-expanded="false"
+                    aria-controls="mobileNav">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true">
+
+                    <path
+                        d="M4 7H20"/>
+
+                    <path
+                        d="M4 12H20"/>
+
+                    <path
+                        d="M4 17H20"/>
+
+                </svg>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- HEADER END --><!-- ==========================================
+MOBILE NAVIGATION
+========================================== -->
+
+<div
+    class="nav-overlay"
+    id="navOverlay">
+</div>
+
+<nav
+    class="mobile-nav"
+    id="mobileNav"
+    aria-label="Mobile Navigation">
+
+    <ul>
+
+        <li>
+            <a
+                href="index.html"
+                class="active">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="services.html">
+                Services
+            </a>
+        </li>
+
+        <li>
+            <a href="projects.html">
+                Our Projects
+            </a>
+        </li>
+
+        <li>
+            <a href="tech-stack.html">
+                Tech Stack
+            </a>
+        </li>
+
+        <li>
+            <a href="team.html">
+                Team
+            </a>
+        </li>
+
+        <li>
+            <a href="contact.html">
+                Contact
+            </a>
+        </li>
+
+    </ul>
+
+    <div class="mobile-cta">
+
+        <a
+            href="contact.html"
+            class="btn btn-primary">
+
+            Start Your Project
+
+        </a>
+
+        <a
+            href="contact.html"
+            class="btn btn-outline">
+
+            Book Free Consultation
+
+        </a>
+
+    </div>
+
+</nav>
+
+<!-- ==========================================
+MAIN CONTENT START
+========================================== -->
+
+<main id="mainContent">
+<!-- ==========================================
+HERO SECTION
+========================================== -->
+
+<section class="hero" id="home">
+
+    <!-- Background Effects -->
+
+    <div class="hero-grid"></div>
+
+    <div class="hero-glow hero-glow-1"></div>
+
+    <div class="hero-glow hero-glow-2"></div>
+
+    <div class="container">
+
+        <div class="hero-wrapper">
+
+            <!-- ======================
+                 LEFT CONTENT
+            ======================= -->
+
+            <div class="hero-content">
+
+                <!-- Hero Badge -->
+
+                <div class="hero-badge glass glow">
+
+                    <span>
+
+                        AI • Web Development • Automation
+
+                    </span>
+
+                </div>
+
+                <!-- Heading -->
+
+                <h1>
+
+                    Build Smarter.<br>
+
+                    <span>Grow Faster.</span>
+
+                </h1>
+
+                <!-- Description -->
+
+                <p>
+
+                    Premium websites, AI-powered solutions,
+                    and intelligent automation crafted to help
+                    businesses establish a strong digital
+                    presence and scale with confidence.
+
+                </p>
+
+                <!-- Buttons -->
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="contact.html"
+                        class="btn btn-primary">
+
+                        Start Your Project
+
+                    </a>
+
+                    <a
+                        href="contact.html"
+                        class="btn btn-outline">
+
+                        Book Free Consultation
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- ======================
+                 RIGHT CONTENT
+            ======================= -->
+
+            <div class="hero-image">
+
+                <div class="hero-image-card glass glow">
+
+                    <img
+
+                        src="assets/hero/hero.webp"
+
+                        alt="Noctis Technologies Hero"
+
+                        width="900"
+
+                        height="900"
+
+                        loading="eager"
+
+                        decoding="async">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+TRUSTED BY SMALL BUSINESS PARTNERS
+========================================== -->
+
+<section class="trusted-partners" id="partners">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-tag glass">
+                Trusted Partners
+            </span>
+
+            <h2>
+                Trusted by Small Business Partners
+            </h2>
+
+            <p>
+                We partner with ambitious small businesses to build premium
+                websites, AI-powered solutions, and digital experiences that
+                support long-term growth.
+            </p>
+
+        </div>
+
+        <div class="partner-slider">
+
+            <div class="partner-track">
+
+                <!-- Verified Client -->
+
+                <a href="project-details.html"
+                   class="partner-card glass verified">
+
+                    <span class="partner-name">
+                        CENTRAL STORES
+                    </span>
+
+                </a>
+
+                <!-- Future Partner -->
+
+                <a href="#"
+                   class="partner-card glass">
+
+                    <span>YOUR BRAND</span>
+
+                </a>
+
+                <a href="#"
+                   class="partner-card glass">
+
+                    <span>YOUR BRAND</span>
+
+                </a>
+
+                <a href="#"
+                   class="partner-card glass">
+
+                    <span>YOUR BRAND</span>
+
+                </a>
+
+                <a href="#"
+                   class="partner-card glass">
+
+                    <span>YOUR BRAND</span>
+
+                </a>
+
+                <a href="#"
+                   class="partner-card glass">
+
+                    <span>YOUR BRAND</span>
+
+                </a>
+
+                <!-- Duplicate for Infinite Loop -->
+
+                <a href="project-details.html"
+                   class="partner-card glass verified">
+
+                    <span class="partner-name">
+                        CENTRAL STORES
+                    </span>
+
+                </a>
+
+                <a href="#"
+                   class="partner-card glass">
+
+                    <span>YOUR BRAND</span>
+
+                </a>
+
+                <a href="#"
+                   class="partner-card glass">
+
+                    <span>YOUR BRAND</span>
+
+                </a>
+
+                <a href="#"
+                   class="partner-card glass">
+
+                    <span>YOUR BRAND</span>
+
+                </a>
+
+                <a href="#"
+                   class="partner-card glass">
+
+                    <span>YOUR BRAND</span>
+
+                </a>
+
+                <a href="#"
+                   class="partner-card glass">
+
+                    <span>YOUR BRAND</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+SERVICES SECTION
+========================================== -->
+
+<section
+    class="services"
+    id="services">
+
+    <div class="container">
+
+        <!-- Section Heading -->
+
+        <div class="section-heading">
+
+            <span class="section-tag glass">
+
+                Our Services
+
+            </span>
+
+            <h2>
+
+                Digital Solutions Built
+                <br>
+                For Modern Businesses
+
+            </h2>
+
+            <p>
+
+                From premium websites to intelligent AI solutions,
+                we help businesses create fast, modern and
+                scalable digital experiences.
+
+            </p>
+
+        </div>
+
+        <!-- Service Cards -->
+
+        <div class="services-grid">
+
+            <!-- Card 1 -->
+
+            <a
+                href="services.html"
+                class="service-card glass glow">
+
+                <div class="service-icon">
+
+                    <!-- SVG Placeholder -->
+
+                </div>
+
+                <h3>
+
+                    Website Development
+
+                </h3>
+
+                <p>
+
+                    Modern, responsive websites designed
+                    for speed, usability and business growth.
+
+                </p>
+
+            </a>
+
+            <!-- Card 2 -->
+
+            <a
+                href="services.html"
+                class="service-card glass glow">
+
+                <div class="service-icon">
+
+                </div>
+
+                <h3>
+
+                    AI Solutions
+
+                </h3>
+
+                <p>
+
+                    Custom AI-powered tools and intelligent
+                    automation tailored for your business.
+
+                </p>
+
+            </a>
+
+            <!-- Card 3 -->
+
+            <a
+                href="services.html"
+                class="service-card glass glow">
+
+                <div class="service-icon">
+
+                </div>
+
+                <h3>
+
+                    Website Redesign
+
+                </h3>
+
+                <p>
+
+                    Transform outdated websites into
+                    premium digital experiences.
+
+                </p>
+
+            </a>
+
+            <!-- Card 4 -->
+
+            <a
+                href="services.html"
+                class="service-card glass glow">
+
+                <div class="service-icon">
+
+                </div>
+
+                <h3>
+
+                    UI / UX Design
+
+                </h3>
+
+                <p>
+
+                    Beautiful interfaces crafted for
+                    better usability and engagement.
+
+                </p>
+
+            </a>
+
+            <!-- Card 5 -->
+
+            <a
+                href="services.html"
+                class="service-card glass glow">
+
+                <div class="service-icon">
+
+                </div>
+
+                <h3>
+
+                    SEO Optimization
+
+                </h3>
+
+                <p>
+
+                    Improve visibility with modern
+                    search engine optimization.
+
+                </p>
+
+            </a>
+
+            <!-- Card 6 -->
+
+            <a
+                href="services.html"
+                class="service-card glass glow">
+
+                <div class="service-icon">
+
+                </div>
+
+                <h3>
+
+                    Idea to Website
+
+                </h3>
+
+                <p>
+
+                    Turn your ideas into a premium,
+                    launch-ready website.
+
+                </p>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================
+FEATURED PROJECTS
+PART 6A-1
+========================================== -->
+
+<section class="projects" id="projects">
+
+    <div class="container">
+
+        <!-- Section Heading -->
+
+        <div class="section-heading">
+
+            <span class="section-tag glass">
+
+                Featured Projects
+
+            </span>
+
+            <h2>
+
+                Real Projects.<br>
+                Real Results.
+
+            </h2>
+
+            <p>
+
+                Explore a selection of real projects we've built for
+                growing businesses and organizations.
+
+            </p>
+
+        </div>
+
+        <!-- Slider -->
+
+        <div class="project-slider">
+
+            <div class="project-track">
+
+                <!-- ======================================
+                     PROJECT 01
+                ======================================= -->
+
+                <article class="project-card glass glow">
+
+                    <!-- Project SVG -->
+
+                    <div class="project-svg">
+
+                        <!-- E-Commerce SVG Placeholder -->
+
+                    </div>
+
+                    <!-- Category -->
+
+                    <span class="project-category">
+
+                        E-Commerce Website
+
+                    </span>
+
+                    <!-- Project Name -->
+
+                    <h3>
+
+                        Central Stores
+
+                    </h3>
+
+                    <!-- Description -->
+
+                    <p>
+
+                        A modern, mobile-first e-commerce website
+                        built to help customers browse products
+                        and place orders with ease.
+
+                    </p>
+
+                    <!-- Technologies -->
+
+                    <div class="project-tech">
+
+                        <span>HTML5</span>
+
+                        <span>CSS3</span>
+
+                        <span>JavaScript</span>
+
+                    </div>
+
+                    <!-- Visit -->
+
+                    <a
+
+                        href="#"
+
+                        class="project-btn"
+
+                        target="_blank"
+
+                        rel="noopener">
+
+                        Visit Now
+
+                    </a>
+
+                </article>
+                               <!-- ======================================
+                     PROJECT 02
+                ======================================= -->
+
+                <article class="project-card glass glow">
+
+                    <!-- Project SVG -->
+
+                    <div class="project-svg">
+
+                        <!-- Education SVG Placeholder -->
+
+                    </div>
+
+                    <!-- Category -->
+
+                    <span class="project-category">
+
+                        Education Platform
+
+                    </span>
+
+                    <!-- Project Name -->
+
+                    <h3>
+
+                        Justin Scholarship Portal
+
+                    </h3>
+
+                    <!-- Description -->
+
+                    <p>
+
+                        A streamlined scholarship portal designed
+                        to help students explore opportunities
+                        and access educational resources.
+
+                    </p>
+
+                    <!-- Technologies -->
+
+                    <div class="project-tech">
+
+                        <span>HTML5</span>
+
+                        <span>CSS3</span>
+
+                        <span>JavaScript</span>
+
+                    </div>
+
+                    <!-- Visit -->
+
+                    <a
+
+                        href="#"
+
+                        class="project-btn"
+
+                        target="_blank"
+
+                        rel="noopener">
+
+                        Visit Now
+
+                    </a>
+
+                </article>
+
+                <!-- ======================================
+                     FUTURE PROJECT
+                     (Hidden)
+                ======================================= -->
+
+                <article
+                    class="project-card glass glow hidden">
+
+                    <div class="project-svg"></div>
+
+                    <span class="project-category">
+
+                        Coming Soon
+
+                    </span>
+
+                    <h3>
+
+                        Future Client Project
+
+                    </h3>
+
+                    <p>
+
+                        Reserved for the next completed
+                        client project.
+
+                    </p>
+
+                    <div class="project-tech">
+
+                        <span>HTML</span>
+
+                        <span>CSS</span>
+
+                        <span>JS</span>
+
+                    </div>
+
+                    <a
+                        href="#"
+                        class="project-btn">
+
+                        Visit Now
+
+                    </a>
+
+                </article>
+
+            </div>
+
+            <!-- Navigation -->
+
+            <div class="project-navigation">
+
+                <button
+                    class="project-prev"
+                    aria-label="Previous Project">
+
+                    ←
+
+                </button>
+
+                <button
+                    class="project-next"
+                    aria-label="Next Project">
+
+                    →
+
+                </button>
+
+            </div>
+
+            <!-- Indicators -->
+
+            <div class="project-dots">
+
+                <span class="active"></span>
+
+                <span></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========= END PROJECTS SECTION ========= -->
+<!-- ==========================================
+AI SOLUTIONS
+PART 7A-1
+========================================== -->
+
+<section class="ai-showcase" id="ai">
+
+    <div class="container">
+
+        <!-- Section Heading -->
+
+        <div class="section-heading">
+
+            <span class="section-tag glass">
+
+                AI Powered
+
+            </span>
+
+            <h2>
+
+                Intelligence That Works
+                <br>
+                for Your Business
+
+            </h2>
+
+            <p>
+
+                Discover intelligent AI solutions designed to
+                automate workflows, improve customer experiences,
+                and accelerate business growth.
+
+            </p>
+
+        </div>
+
+        <!-- AI Layout -->
+
+        <div class="ai-layout">
+
+            <!-- =========================
+                 LEFT SIDE
+            ========================== -->
+
+            <div class="ai-column left">
+
+                <!-- Card 01 -->
+
+                <article class="ai-card glass glow">
+
+                    <div class="ai-icon">
+
+                        <!-- AI Chatbot SVG -->
+
+                    </div>
+
+                    <h3>
+
+                        AI Chatbots
+
+                    </h3>
+
+                    <p>
+
+                        Intelligent chat assistants for websites
+                        and businesses.
+
+                    </p>
+
+                </article>
+
+                <!-- Card 02 -->
+
+                <article class="ai-card glass glow">
+
+                    <div class="ai-icon">
+
+                        <!-- Voice Agent SVG -->
+
+                    </div>
+
+                    <h3>
+
+                        AI Voice Agents
+
+                    </h3>
+
+                    <p>
+
+                        AI-powered voice assistants for calls
+                        and customer interactions.
+
+                    </p>
+
+                </article>
+
+                <!-- Card 03 -->
+
+                <article class="ai-card glass glow">
+
+                    <div class="ai-icon">
+
+                        <!-- Automation SVG -->
+
+                    </div>
+
+                    <h3>
+
+                        Business Automation
+
+                    </h3>
+
+                    <p>
+
+                        Automate repetitive workflows and
+                        improve business efficiency.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+            <!-- =========================
+                 CENTER AI CORE
+            ========================== -->
+
+            <div class="ai-core-wrapper">
+
+                <div class="ai-core glass glow">
+
+                    <div class="core-ring ring-one"></div>
+
+                    <div class="core-ring ring-two"></div>
+
+                    <div class="core-ring ring-three"></div>
+
+                    <div class="core-center">
+
+                        AI
+
+                    </div>
+
+                </div>
+
+            </div>
+                        <!-- =========================
+                 RIGHT SIDE
+            ========================== -->
+
+            <div class="ai-column right">
+
+                <!-- Card 04 -->
+
+                <article class="ai-card glass glow">
+
+                    <div class="ai-icon">
+
+                        <!-- WhatsApp Automation SVG -->
+
+                    </div>
+
+                    <h3>
+
+                        WhatsApp Automation
+
+                    </h3>
+
+                    <p>
+
+                        Smart messaging, lead management and
+                        automated customer communication.
+
+                    </p>
+
+                </article>
+
+                <!-- Card 05 -->
+
+                <article class="ai-card glass glow">
+
+                    <div class="ai-icon">
+
+                        <!-- AI Content SVG -->
+
+                    </div>
+
+                    <h3>
+
+                        AI Content Solutions
+
+                    </h3>
+
+                    <p>
+
+                        Generate high-quality business content
+                        using intelligent AI systems.
+
+                    </p>
+
+                </article>
+
+                <!-- Card 06 -->
+
+                <article class="ai-card glass glow">
+
+                    <div class="ai-icon">
+
+                        <!-- Custom AI SVG -->
+
+                    </div>
+
+                    <h3>
+
+                        Custom AI Solutions
+
+                    </h3>
+
+                    <p>
+
+                        Tailor-made AI solutions built around
+                        your business requirements.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+            <!-- =========================
+                 SVG CONNECTION LAYER
+            ========================== -->
+
+            <svg
+                class="ai-network"
+                viewBox="0 0 1000 700"
+                aria-hidden="true">
+
+                <!-- Left Connections -->
+
+                <line x1="500" y1="350" x2="250" y2="140"></line>
+
+                <line x1="500" y1="350" x2="250" y2="350"></line>
+
+                <line x1="500" y1="350" x2="250" y2="560"></line>
+
+                <!-- Right Connections -->
+
+                <line x1="500" y1="350" x2="750" y2="140"></line>
+
+                <line x1="500" y1="350" x2="750" y2="350"></line>
+
+                <line x1="500" y1="350" x2="750" y2="560"></line>
+
+            </svg>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========= END AI SOLUTIONS ========= -->
+<!-- ==========================================
+WHY BUSINESSES CHOOSE NOCTIS
+PART 8A-1
+========================================== -->
+
+<section class="why-noctis" id="why-noctis">
+
+    <div class="container">
+
+        <!-- Section Heading -->
+
+        <div class="section-heading">
+
+            <span class="section-tag glass">
+
+                Why Noctis
+
+            </span>
+
+            <h2>
+
+                Why Businesses
+                <br>
+                Choose Noctis
+
+            </h2>
+
+            <p>
+
+                We combine design, technology, and innovation
+                to build digital solutions that help businesses
+                grow with confidence.
+
+            </p>
+
+        </div>
+
+        <!-- Layout -->
+
+        <div class="why-layout">
+
+            <!-- ======================
+                 LEFT FEATURES
+            ======================= -->
+
+            <div class="why-column left">
+
+                <!-- Feature 01 -->
+
+                <article class="why-card glass glow">
+
+                    <div class="why-icon">
+
+                        <!-- AI Powered SVG -->
+
+                    </div>
+
+                    <h3>
+
+                        AI Powered
+
+                    </h3>
+
+                    <p>
+
+                        Smart AI solutions designed to automate
+                        and enhance business operations.
+
+                    </p>
+
+                </article>
+
+                <!-- Feature 02 -->
+
+                <article class="why-card glass glow">
+
+                    <div class="why-icon">
+
+                        <!-- Mobile First SVG -->
+
+                    </div>
+
+                    <h3>
+
+                        Mobile First
+
+                    </h3>
+
+                    <p>
+
+                        Every website is optimized for phones,
+                        tablets, laptops and desktops.
+
+                    </p>
+
+                </article>
+
+                <!-- Feature 03 -->
+
+                <article class="why-card glass glow">
+
+                    <div class="why-icon">
+
+                        <!-- Premium UI SVG -->
+
+                    </div>
+
+                    <h3>
+
+                        Premium UI / UX
+
+                    </h3>
+
+                    <p>
+
+                        Elegant interfaces crafted for exceptional
+                        digital experiences.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+            <!-- ======================
+                 CENTER CORE
+            ======================= -->
+
+            <div class="why-core-wrapper">
+
+                <div class="why-core glass glow">
+
+                    <div class="why-ring ring-one"></div>
+
+                    <div class="why-ring ring-two"></div>
+
+                    <div class="why-ring ring-three"></div>
+
+                    <div class="why-center">
+
+                        NOCTIS
+
+                    </div>
+
+                </div>
+
+            </div>
+                        <!-- ======================
+                 RIGHT FEATURES
+            ======================= -->
+
+            <div class="why-column right">
+
+                <!-- Feature 04 -->
+
+                <article class="why-card glass glow">
+
+                    <div class="why-icon">
+
+                        <!-- SEO SVG -->
+
+                    </div>
+
+                    <h3>
+
+                        SEO Optimized
+
+                    </h3>
+
+                    <p>
+
+                        Built using modern SEO best practices
+                        to improve search visibility.
+
+                    </p>
+
+                </article>
+
+                <!-- Feature 05 -->
+
+                <article class="why-card glass glow">
+
+                    <div class="why-icon">
+
+                        <!-- Performance SVG -->
+
+                    </div>
+
+                    <h3>
+
+                        Fast Performance
+
+                    </h3>
+
+                    <p>
+
+                        Optimized for speed, responsiveness
+                        and Core Web Vitals.
+
+                    </p>
+
+                </article>
+
+                <!-- Feature 06 -->
+
+                <article class="why-card glass glow">
+
+                    <div class="why-icon">
+
+                        <!-- Global SVG -->
+
+                    </div>
+
+                    <h3>
+
+                        Global Ready
+
+                    </h3>
+
+                    <p>
+
+                        Professional digital solutions built
+                        for businesses worldwide.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+            <!-- ======================
+                 CONNECTION NETWORK
+            ======================= -->
+
+            <svg
+                class="why-network"
+                viewBox="0 0 1000 700"
+                aria-hidden="true">
+
+                <!-- Left -->
+
+                <line x1="500" y1="350" x2="250" y2="140"></line>
+
+                <line x1="500" y1="350" x2="250" y2="350"></line>
+
+                <line x1="500" y1="350" x2="250" y2="560"></line>
+
+                <!-- Right -->
+
+                <line x1="500" y1="350" x2="750" y2="140"></line>
+
+                <line x1="500" y1="350" x2="750" y2="350"></line>
+
+                <line x1="500" y1="350" x2="750" y2="560"></line>
+
+            </svg>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========= END WHY NOCTIS ========= -->
+<!-- ==========================================
+PRICING
+PART 9A-1
+========================================== -->
+
+<section class="pricing" id="pricing">
+
+    <div class="container">
+
+        <!-- Section Heading -->
+
+        <div class="section-heading">
+
+            <span class="section-tag glass">
+
+                Affordable & Transparent
+
+            </span>
+
+            <h2>
+
+                Premium Solutions
+                <br>
+                for Every Stage of Growth
+
+            </h2>
+
+            <p>
+
+                Whether you're launching your first website
+                or building an advanced AI-powered platform,
+                we offer flexible solutions tailored to
+                your business goals.
+
+            </p>
+
+        </div>
+
+        <!-- Hero Price -->
+
+        <div class="pricing-hero glass glow">
+
+            <span class="pricing-label">
+
+                STARTING FROM
+
+            </span>
+
+            <div class="pricing-value">
+
+                ₹<span id="priceCounter">0</span>/-
+
+            </div>
+
+            <p>
+
+                Professional website solutions for startups,
+                businesses and organizations worldwide.
+
+            </p>
+
+        </div>
+
+        <!-- Pricing Grid -->
+
+        <div class="pricing-grid">
+
+            <!-- Card 01 -->
+
+            <article class="pricing-card glass glow">
+
+                <div class="pricing-icon">
+
+                    <!-- Starter SVG -->
+
+                </div>
+
+                <h3>
+
+                    Starter Website
+
+                </h3>
+
+                <p>
+
+                    Perfect for startups,
+                    personal brands and
+                    small businesses.
+
+                </p>
+
+                <a
+
+                    href="contact.html"
+
+                    class="pricing-btn">
+
+                    Get Started
+
+                </a>
+
+            </article>
+
+            <!-- Card 02 -->
+
+            <article class="pricing-card glass glow">
+
+                <div class="pricing-icon">
+
+                    <!-- Business SVG -->
+
+                </div>
+
+                <h3>
+
+                    Business Website
+
+                </h3>
+
+                <p>
+
+                    Professional business
+                    websites built for
+                    long-term growth.
+
+                </p>
+
+                <a
+
+                    href="contact.html"
+
+                    class="pricing-btn">
+
+                    Get Started
+
+                </a>
+
+            </article>
+                        <!-- Card 03 -->
+
+            <article class="pricing-card glass glow">
+
+                <div class="pricing-icon">
+
+                    <!-- Premium SVG -->
+
+                </div>
+
+                <h3>
+
+                    Premium Website
+
+                </h3>
+
+                <p>
+
+                    High-end digital experiences
+                    with premium UI/UX and
+                    advanced functionality.
+
+                </p>
+
+                <a
+
+                    href="contact.html"
+
+                    class="pricing-btn">
+
+                    Get Started
+
+                </a>
+
+            </article>
+
+            <!-- Card 04 -->
+
+            <article class="pricing-card glass glow">
+
+                <div class="pricing-icon">
+
+                    <!-- Custom Solution SVG -->
+
+                </div>
+
+                <h3>
+
+                    Custom Solution
+
+                </h3>
+
+                <p>
+
+                    AI, automation,
+                    portals, SaaS,
+                    ERP and custom software.
+
+                </p>
+
+                <a
+
+                    href="contact.html"
+
+                    class="pricing-btn">
+
+                    Request Quote
+
+                </a>
+
+            </article>
+
+        </div>
+
+        <!-- Bottom CTA -->
+
+        <div class="pricing-bottom glass">
+
+            <h3>
+
+                Need Something Unique?
+
+            </h3>
+
+            <p>
+
+                Let's discuss your idea and build a
+                custom solution tailored to your business.
+
+            </p>
+
+            <div class="pricing-actions">
+
+                <a
+
+                    href="contact.html"
+
+                    class="btn btn-primary">
+
+                    Start Your Project
+
+                </a>
+
+                <a
+
+                    href="https://wa.me/"
+
+                    class="btn btn-outline"
+
+                    target="_blank"
+
+                    rel="noopener">
+
+                    WhatsApp Us
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========= END PRICING SECTION ========= -->
+<!-- ==========================================
+FAQ
+PART 10A-1
+========================================== -->
+
+<section class="faq" id="faq">
+
+    <div class="container">
+
+        <!-- Section Heading -->
+
+        <div class="section-heading">
+
+            <span class="section-tag glass">
+
+                Frequently Asked Questions
+
+            </span>
+
+            <h2>
+
+                Have Questions?
+                <br>
+                We've Got Answers.
+
+            </h2>
+
+            <p>
+
+                Find answers to the most common questions
+                about our services, pricing, development
+                process and AI solutions.
+
+            </p>
+
+        </div>
+
+        <!-- FAQ Wrapper -->
+
+        <div class="faq-wrapper">
+
+            <!-- FAQ 01 -->
+
+            <article class="faq-item glass">
+
+                <button
+                    class="faq-question"
+                    type="button">
+
+                    <span>
+
+                        How long does it take to build a website?
+
+                    </span>
+
+                    <svg
+                        class="faq-icon"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none">
+
+                        <path
+                            d="M12 5V19"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"/>
+
+                        <path
+                            d="M5 12H19"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"/>
+
+                    </svg>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <div class="typing-text">
+
+                        Most websites are completed within the agreed project timeline,
+                        depending on the scope and requirements.
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- FAQ 02 -->
+
+            <article class="faq-item glass">
+
+                <button
+                    class="faq-question"
+                    type="button">
+
+                    <span>
+
+                        What is the starting price?
+
+                    </span>
+
+                    <svg
+                        class="faq-icon"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none">
+
+                        <path
+                            d="M12 5V19"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"/>
+
+                        <path
+                            d="M5 12H19"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"/>
+
+                    </svg>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <div class="typing-text">
+
+                        Our professional website solutions start from ₹1,999/-,
+                        with custom pricing available for larger projects.
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- FAQ 03 -->
+
+            <article class="faq-item glass">
+
+                <button
+                    class="faq-question"
+                    type="button">
+
+                    <span>
+
+                        Do you build mobile-friendly websites?
+
+                    </span>
+
+                    <svg
+                        class="faq-icon"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none">
+
+                        <path
+                            d="M12 5V19"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"/>
+
+                        <path
+                            d="M5 12H19"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"/>
+
+                    </svg>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <div class="typing-text">
+
+                        Yes. Every website is designed mobile-first and optimized
+                        for all screen sizes.
+
+                    </div>
+
+                </div>
+
+            </article>
+                        <!-- FAQ 04 -->
+
+            <article class="faq-item glass">
+
+                <button
+                    class="faq-question"
+                    type="button">
+
+                    <span>
+
+                        Can you redesign my existing website?
+
+                    </span>
+
+                    <svg
+                        class="faq-icon"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none">
+
+                        <path
+                            d="M12 5V19"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"/>
+
+                        <path
+                            d="M5 12H19"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"/>
+
+                    </svg>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <div class="typing-text">
+
+                        Yes. We modernize, redesign and optimize
+                        existing websites while preserving your
+                        business goals and brand identity.
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- FAQ 05 -->
+
+            <article class="faq-item glass">
+
+                <button
+                    class="faq-question"
+                    type="button">
+
+                    <span>
+
+                        Do you provide AI solutions?
+
+                    </span>
+
+                    <svg
+                        class="faq-icon"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none">
+
+                        <path
+                            d="M12 5V19"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"/>
+
+                        <path
+                            d="M5 12H19"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"/>
+
+                    </svg>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <div class="typing-text">
+
+                        Yes. We develop AI chatbots,
+                        voice agents, business automation,
+                        WhatsApp automation and custom AI solutions.
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- FAQ 06 -->
+
+            <article class="faq-item glass">
+
+                <button
+                    class="faq-question"
+                    type="button">
+
+                    <span>
+
+                        Do you offer website maintenance?
+
+                    </span>
+
+                    <svg
+                        class="faq-icon"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none">
+
+                        <path
+                            d="M12 5V19"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"/>
+
+                        <path
+                            d="M5 12H19"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"/>
+
+                    </svg>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <div class="typing-text">
+
+                        Yes. We provide website maintenance,
+                        performance optimization, security updates
+                        and ongoing technical support.
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- FAQ 07 -->
+
+            <article class="faq-item glass">
+
+                <button
+                    class="faq-question"
+                    type="button">
+
+                    <span>
+
+                        Can my website grow with my business?
+
+                    </span>
+
+                    <svg
+                        class="faq-icon"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none">
+
+                        <path
+                            d="M12 5V19"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"/>
+
+                        <path
+                            d="M5 12H19"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"/>
+
+                    </svg>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <div class="typing-text">
+
+                        Absolutely. Every project is built with
+                        scalability in mind, making it easy to
+                        expand as your business grows.
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- FAQ 08 -->
+
+            <article class="faq-item glass">
+
+                <button
+                    class="faq-question"
+                    type="button">
+
+                    <span>
+
+                        How do I start my project?
+
+                    </span>
+
+                    <svg
+                        class="faq-icon"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none">
+
+                        <path
+                            d="M12 5V19"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"/>
+
+                        <path
+                            d="M5 12H19"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"/>
+
+                    </svg>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <div class="typing-text">
+
+                        Contact us through our website or WhatsApp.
+                        We'll understand your requirements, discuss
+                        the best solution and begin your project.
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========= END FAQ SECTION ========= -->
+<!-- ==========================================
+CONTACT & CTA
+PART 11A-1
+========================================== -->
+
+<section class="contact-section" id="contact">
+
+    <div class="container">
+
+        <div class="contact-wrapper">
+
+            <!-- ==========================
+                 LEFT CONTENT
+            ========================== -->
+
+            <div class="contact-content">
+
+                <span class="section-tag glass">
+
+                    Let's Connect
+
+                </span>
+
+                <h2>
+
+                    Let's Build Your
+                    <br>
+                    Next Digital
+                    Success Story
+
+                </h2>
+
+                <p>
+
+                    Whether you need a website,
+                    AI solution, website redesign,
+                    or custom software,
+                    we're here to transform
+                    your ideas into reality.
+
+                </p>
+
+                <div class="contact-highlights">
+
+                    <div class="highlight-item">
+
+                        <div class="highlight-icon">
+
+                            <!-- SVG -->
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+
+                                Fast Response
+
+                            </h4>
+
+                            <p>
+
+                                Usually within a few hours.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="highlight-item">
+
+                        <div class="highlight-icon">
+
+                            <!-- SVG -->
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+
+                                Worldwide Service
+
+                            </h4>
+
+                            <p>
+
+                                Supporting businesses globally.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="highlight-item">
+
+                        <div class="highlight-icon">
+
+                            <!-- SVG -->
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+
+                                Transparent Pricing
+
+                            </h4>
+
+                            <p>
+
+                                Starting from ₹1,999/-.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ==========================
+                 CONTACT FORM
+            ========================== -->
+
+            <div class="contact-form-card glass glow">
+
+                <form
+                    id="contactForm"
+                    autocomplete="off">
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Full Name
+
+                        </label>
+
+                        <input
+
+                            type="text"
+
+                            placeholder="Enter your name"
+
+                            required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Phone Number
+
+                        </label>
+
+                        <input
+
+                            id="phoneInput"
+
+                            type="tel"
+
+                            placeholder="+91 98765 43210"
+
+                            required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Email Address
+                            (Optional)
+
+                        </label>
+
+                        <input
+
+                            type="email"
+
+                            placeholder="your@email.com">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Business
+                            (Optional)
+
+                        </label>
+
+                        <input
+
+                            type="text"
+
+                            placeholder="Business Name">
+
+                    </div>
+                           <div class="form-group">
+
+                        <label>
+
+                            Project Requirement
+
+                        </label>
+
+                        <select required>
+
+                            <option value="">
+
+                                Select a Service
+
+                            </option>
+
+                            <option>
+
+                                Website Development
+
+                            </option>
+
+                            <option>
+
+                                AI Solutions
+
+                            </option>
+
+                            <option>
+
+                                Website Redesign
+
+                            </option>
+
+                            <option>
+
+                                UI / UX Design
+
+                            </option>
+
+                            <option>
+
+                                SEO Optimization
+
+                            </option>
+
+                            <option>
+
+                                Idea to Website
+
+                            </option>
+
+                            <option>
+
+                                Custom Solution
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Your Message
+
+                        </label>
+
+                        <textarea
+
+                            rows="5"
+
+                            placeholder="Tell us about your project..."
+
+                            required>
+
+                        </textarea>
+
+                    </div>
+
+                    <button
+
+                        type="submit"
+
+                        class="btn btn-primary contact-submit">
+
+                        Start My Project
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <!-- ==================================
+             QUICK CONTACT
+        =================================== -->
+
+        <div class="quick-contact">
+
+            <a
+
+                href="tel:+91XXXXXXXXXX"
+
+                class="quick-card glass">
+
+                <div class="quick-icon">
+
+                    <!-- Phone SVG -->
+
+                </div>
+
+                <h3>
+
+                    Call Us
+
+                </h3>
+
+                <p>
+
+                    +91 XXXXX XXXXX
+
+                </p>
+
+            </a>
+
+            <a
+
+                href="https://wa.me/91XXXXXXXXXX"
+
+                class="quick-card glass"
+
+                target="_blank"
+
+                rel="noopener">
+
+                <div class="quick-icon">
+
+                    <!-- WhatsApp SVG -->
+
+                </div>
+
+                <h3>
+
+                    WhatsApp
+
+                </h3>
+
+                <p>
+
+                    Chat with our team
+
+                </p>
+
+            </a>
+
+            <a
+
+                href="mailto:hello@noctistechnologies.com"
+
+                class="quick-card glass">
+
+                <div class="quick-icon">
+
+                    <!-- Email SVG -->
+
+                </div>
+
+                <h3>
+
+                    Email
+
+                </h3>
+
+                <p>
+
+                    hello@noctistechnologies.com
+
+                </p>
+
+            </a>
+
+        </div>
+
+        <!-- ==================================
+             CLOSING CTA
+        =================================== -->
+
+        <div class="contact-closing">
+
+            <h3>
+
+                Every Great Business Starts
+                With a Conversation.
+
+            </h3>
+
+            <p>
+
+                Let's create something exceptional together.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========= END CONTACT SECTION ========= --> 
+  <!-- ==========================================
+FOOTER
+PART 12A-1
+========================================== -->
+
+<footer class="footer">
+
+    <!-- Background -->
+
+    <div class="footer-bg"></div>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <!-- ==================================
+                 BRAND
+            =================================== -->
+
+            <div class="footer-brand">
+
+                <a
+                    href="#home"
+                    class="footer-logo">
+
+                    NOCTIS
+                    <span>
+
+                        TECHNOLOGIES
+
+                    </span>
+
+                </a>
+
+                <p>
+
+                    Building premium websites,
+                    AI solutions and digital
+                    experiences for businesses
+                    worldwide.
+
+                </p>
+
+                <div class="footer-buttons">
+
+                    <a
+
+                        href="#contact"
+
+                        class="btn btn-primary">
+
+                        Start My Project
+
+                    </a>
+
+                    <a
+
+                        href="https://wa.me/91XXXXXXXXXX"
+
+                        target="_blank"
+
+                        rel="noopener"
+
+                        class="btn btn-outline">
+
+                        WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- ==================================
+                 QUICK LINKS
+            =================================== -->
+
+            <div class="footer-column">
+
+                <h3>
+
+                    Quick Links
+
+                </h3>
+
+                <ul>
+
+                    <li>
+
+                        <a href="#home">
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#services">
+
+                            Services
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#projects">
+
+                            Projects
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#ai">
+
+                            AI Solutions
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#pricing">
+
+                            Pricing
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#contact">
+
+                            Contact
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- ==================================
+                 SERVICES
+            =================================== -->
+
+            <div class="footer-column">
+
+                <h3>
+
+                    Services
+
+                </h3>
+
+                <ul>
+
+                    <li>
+
+                        Website Development
+
+                    </li>
+
+                    <li>
+
+                        AI Solutions
+
+                    </li>
+
+                    <li>
+
+                        Website Redesign
+
+                    </li>
+
+                    <li>
+
+                        UI / UX Design
+
+                    </li>
+
+                    <li>
+
+                        SEO Optimization
+
+                    </li>
+
+                    <li>
+
+                        Idea to Website
+
+                    </li>
+
+                </ul>
+
+            </div>
+                               <!-- ==================================
+                 CONTACT
+            =================================== -->
+
+            <div class="footer-column">
+
+                <h3>
+
+                    Contact
+
+                </h3>
+
+                <ul class="footer-contact">
+
+                    <li>
+
+                        <a href="tel:+91XXXXXXXXXX">
+
+                            <!-- Phone SVG -->
+
+                            <span>
+
+                                +91 XXXXX XXXXX
+
+                            </span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a
+                            href="https://wa.me/91XXXXXXXXXX"
+                            target="_blank"
+                            rel="noopener">
+
+                            <!-- WhatsApp SVG -->
+
+                            <span>
+
+                                WhatsApp Chat
+
+                            </span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a
+                            href="mailto:hello@noctistechnologies.com">
+
+                            <!-- Email SVG -->
+
+                            <span>
+
+                                hello@noctistechnologies.com
+
+                            </span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <!-- Location SVG -->
+
+                        <span>
+
+                            Tamil Nadu, India
+
+                        </span>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- ==================================
+             FOOTER DIVIDER
+        =================================== -->
+
+        <div class="footer-divider"></div>
+
+        <!-- ==================================
+             BOTTOM BAR
+        =================================== -->
+
+        <div class="footer-bottom">
+
+            <p>
+
+                © 2026 Noctis Technologies.
+                Crafted with precision in India.
+
+            </p>
+
+            <div class="footer-bottom-links">
+
+                <a href="privacy.html">
+
+                    Privacy Policy
+
+                </a>
+
+                <a href="terms.html">
+
+                    Terms of Service
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==================================
+         BACK TO TOP
+    =================================== -->
+
+    <button
+
+        id="backToTop"
+
+        class="back-to-top"
+
+        aria-label="Back to Top">
+
+        <!-- Arrow SVG Later -->
+
+        ↑
+
+    </button>
+
+</footer>
+
+<!-- ========= END FOOTER ========= -->
+<script src="script.js"></script>
+</body>
+</html>
