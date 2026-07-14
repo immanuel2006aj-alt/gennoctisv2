@@ -2147,3 +2147,1139 @@ setInterval(()=>{
     );
 
 },7000);
+/*==================================================
+PHASE 16A-1
+PRICING COUNTER
+==================================================*/
+
+const pricingCounter = {};
+
+initializePricingCounter();
+
+/*==================================================
+INITIALIZE
+==================================================*/
+
+function initializePricingCounter(){
+
+    pricingCounter.section =
+
+        document.querySelector("#pricing");
+
+    pricingCounter.number =
+
+        document.getElementById("priceCounter");
+
+    if(
+
+        !pricingCounter.section ||
+
+        !pricingCounter.number
+
+    ) return;
+
+    pricingCounter.started = false;
+
+    const observer =
+
+    new IntersectionObserver(
+
+        entries=>{
+
+            entries.forEach(entry=>{
+
+                if(
+
+                    entry.isIntersecting &&
+
+                    !pricingCounter.started
+
+                ){
+
+                    pricingCounter.started = true;
+
+                    animatePriceCounter();
+
+                }
+
+            });
+
+        },
+
+        {
+
+            threshold:.45
+
+        }
+
+    );
+
+    observer.observe(
+
+        pricingCounter.section
+
+    );
+
+}
+
+/*==================================================
+COUNTER
+==================================================*/
+
+function animatePriceCounter(){
+
+    const start = 0;
+
+    const end = 1999;
+
+    const duration = 1800;
+
+    const startTime =
+
+    performance.now();
+
+    function update(time){
+
+        const progress =
+
+        Math.min(
+
+            (time-startTime)/duration,
+
+            1
+
+        );
+
+        const eased =
+
+        easeOutCubic(
+
+            progress
+
+        );
+
+        const value =
+
+        Math.floor(
+
+            start+
+
+            (end-start)*eased
+
+        );
+
+        pricingCounter.number.textContent=
+
+        value.toLocaleString(
+
+            "en-IN"
+
+        );
+
+        if(progress<1){
+
+            requestAnimationFrame(
+
+                update
+
+            );
+
+        }
+
+        else{
+
+            pricingCounter.number.textContent=
+
+            "1,999";
+
+            finishPricingCounter();
+
+        }
+
+    }
+
+    requestAnimationFrame(
+
+        update
+
+    );
+
+}
+/*==================================================
+PHASE 16A-2
+PRICING REVEAL
+==================================================*/
+
+/*==================================================
+EASING
+==================================================*/
+
+function easeOutCubic(x){
+
+    return 1 - Math.pow(1 - x,3);
+
+}
+
+/*==================================================
+FINISH
+==================================================*/
+
+function finishPricingCounter(){
+
+    pricingCounter.section.classList.add(
+
+        "pricing-complete"
+
+    );
+
+    pulsePricingHero();
+
+    revealPricingCards();
+
+}
+
+/*==================================================
+PULSE
+==================================================*/
+
+function pulsePricingHero(){
+
+    const hero =
+
+    document.querySelector(
+
+        ".pricing-hero"
+
+    );
+
+    if(!hero) return;
+
+    hero.classList.remove(
+
+        "price-pulse"
+
+    );
+
+    void hero.offsetWidth;
+
+    hero.classList.add(
+
+        "price-pulse"
+
+    );
+
+}
+
+/*==================================================
+REVEAL CARDS
+==================================================*/
+
+function revealPricingCards(){
+
+    const cards =
+
+    document.querySelectorAll(
+
+        ".pricing-card"
+
+    );
+
+    cards.forEach(
+
+        (card,index)=>{
+
+            setTimeout(()=>{
+
+                card.classList.add(
+
+                    "price-card-show"
+
+                );
+
+            },
+
+            index*180);
+
+        }
+
+    );
+
+}
+
+/*==================================================
+BUTTON GLOW
+==================================================*/
+
+setTimeout(()=>{
+
+    document
+
+    .querySelectorAll(
+
+        ".pricing-btn"
+
+    )
+
+    .forEach(button=>{
+
+        button.classList.add(
+
+            "price-button-ready"
+
+        );
+
+    });
+
+},2200);
+
+/*==================================================
+REPLAY PROTECTION
+==================================================*/
+
+document.addEventListener(
+
+    "visibilitychange",
+
+    ()=>{
+
+        if(
+
+            document.hidden
+
+        ) return;
+
+        if(
+
+            pricingCounter.started
+
+        ){
+
+            pricingCounter.number.textContent=
+
+            "1,999";
+
+        }
+
+    }
+
+);
+
+/*==================================================
+END PHASE 16
+==================================================*/
+/*==================================================
+PHASE 17A-1
+FAQ ENGINE
+==================================================*/
+
+const faq = {};
+
+initializeFAQ();
+
+/*==================================================
+INITIALIZE
+==================================================*/
+
+function initializeFAQ(){
+
+    faq.items =
+
+        document.querySelectorAll(".faq-item");
+
+    if(
+
+        faq.items.length===0
+
+    ) return;
+
+    faq.openItem = null;
+
+    faq.typed = new WeakSet();
+
+    faq.items.forEach(item=>{
+
+        const button =
+
+        item.querySelector(
+
+            ".faq-question"
+
+        );
+
+        button.addEventListener(
+
+            "click",
+
+            ()=>{
+
+                toggleFAQ(item);
+
+            }
+
+        );
+
+    });
+
+}
+
+/*==================================================
+TOGGLE
+==================================================*/
+
+function toggleFAQ(item){
+
+    if(
+
+        faq.openItem===item
+
+    ){
+
+        closeFAQ(item);
+
+        faq.openItem=null;
+
+        return;
+
+    }
+
+    if(faq.openItem){
+
+        closeFAQ(
+
+            faq.openItem
+
+        );
+
+    }
+
+    openFAQ(item);
+
+    faq.openItem=item;
+
+}
+
+/*==================================================
+OPEN
+==================================================*/
+
+function openFAQ(item){
+
+    item.classList.add(
+
+        "active"
+
+    );
+
+    const answer =
+
+    item.querySelector(
+
+        ".typing-text"
+
+    );
+
+    if(!answer) return;
+
+    if(
+
+        faq.typed.has(answer)
+
+    ) return;
+
+    typeAnswer(answer);
+
+}
+
+/*==================================================
+CLOSE
+==================================================*/
+
+function closeFAQ(item){
+
+    item.classList.remove(
+
+        "active"
+
+    );
+
+        }
+/*==================================================
+PHASE 17A-2
+AI TYPEWRITER
+==================================================*/
+
+/*==================================================
+TYPE ANSWER
+==================================================*/
+
+function typeAnswer(element){
+
+    const fullText =
+
+    element.textContent.trim();
+
+    element.textContent = "";
+
+    let index = 0;
+
+    const speed = 18;
+
+    const cursor =
+
+    document.createElement("span");
+
+    cursor.className =
+
+    "typing-cursor";
+
+    cursor.textContent = "|";
+
+    element.appendChild(cursor);
+
+    function type(){
+
+        if(index < fullText.length){
+
+            cursor.insertAdjacentText(
+
+                "beforebegin",
+
+                fullText.charAt(index)
+
+            );
+
+            index++;
+
+            setTimeout(
+
+                type,
+
+                speed
+
+            );
+
+        }
+
+        else{
+
+            cursor.remove();
+
+            faq.typed.add(
+
+                element
+
+            );
+
+            finishTyping(
+
+                element
+
+            );
+
+        }
+
+    }
+
+    type();
+
+}
+
+/*==================================================
+FINISH
+==================================================*/
+
+function finishTyping(element){
+
+    element.classList.add(
+
+        "typing-complete"
+
+    );
+
+    const item =
+
+    element.closest(
+
+        ".faq-item"
+
+    );
+
+    if(item){
+
+        item.classList.add(
+
+            "faq-ready"
+
+        );
+
+    }
+
+}
+
+/*==================================================
+RESET (OPTIONAL)
+==================================================*/
+
+function resetFAQTyping(){
+
+    faq.items.forEach(item=>{
+
+        const answer =
+
+        item.querySelector(
+
+            ".typing-text"
+
+        );
+
+        if(answer){
+
+            answer.classList.remove(
+
+                "typing-complete"
+
+            );
+
+        }
+
+    });
+
+}
+
+/*==================================================
+KEYBOARD ACCESSIBILITY
+==================================================*/
+
+faq.items.forEach(item=>{
+
+    const button =
+
+    item.querySelector(
+
+        ".faq-question"
+
+    );
+
+    if(!button) return;
+
+    button.addEventListener(
+
+        "keydown",
+
+        event=>{
+
+            if(
+
+                event.key==="Enter" ||
+
+                event.key===" "
+
+            ){
+
+                event.preventDefault();
+
+                toggleFAQ(item);
+
+            }
+
+        }
+
+    );
+
+});
+/*==================================================
+PHASE 18A-1
+SMART CONTACT FORM
+==================================================*/
+
+const contact = {};
+
+initializeContactForm();
+
+/*==================================================
+INITIALIZE
+==================================================*/
+
+function initializeContactForm(){
+
+    contact.form =
+
+        document.getElementById(
+
+            "contactForm"
+
+        );
+
+    contact.phone =
+
+        document.getElementById(
+
+            "phoneInput"
+
+        );
+
+    contact.button =
+
+        document.querySelector(
+
+            ".contact-submit"
+
+        );
+
+    if(
+
+        !contact.form ||
+
+        !contact.phone
+
+    ) return;
+
+    setupPhoneInput();
+
+    setupContactForm();
+
+}
+
+/*==================================================
+PHONE INPUT
+==================================================*/
+
+function setupPhoneInput(){
+
+    contact.phone.addEventListener(
+
+        "input",
+
+        formatPhoneNumber
+
+    );
+
+    contact.phone.addEventListener(
+
+        "blur",
+
+        validatePhoneNumber
+
+    );
+
+}
+
+/*==================================================
+FORMAT
+==================================================*/
+
+function formatPhoneNumber(event){
+
+    let value =
+
+    event.target.value
+
+    .replace(/\D/g,"");
+
+    if(
+
+        value.startsWith("91")
+
+    ){
+
+        value = value.substring(2);
+
+    }
+
+    value = value.substring(0,10);
+
+    if(
+
+        value.length > 5
+
+    ){
+
+        value =
+
+        value.substring(0,5)
+
+        +" "+
+
+        value.substring(5);
+
+    }
+
+    event.target.value =
+
+    value;
+
+}
+
+/*==================================================
+VALIDATE
+==================================================*/
+
+function validatePhoneNumber(){
+
+    const digits =
+
+    contact.phone.value
+
+    .replace(/\D/g,"");
+
+    if(
+
+        digits.length===10
+
+    ){
+
+        contact.phone.classList.add(
+
+            "valid-phone"
+
+        );
+
+        contact.phone.classList.remove(
+
+            "invalid-phone"
+
+        );
+
+        return true;
+
+    }
+
+    contact.phone.classList.remove(
+
+        "valid-phone"
+
+    );
+
+    contact.phone.classList.add(
+
+        "invalid-phone"
+
+    );
+
+    return false;
+
+    }
+/*==================================================
+PHASE 18A-2
+FORM SUBMISSION ENGINE
+==================================================*/
+
+/*==================================================
+FORM
+==================================================*/
+
+function setupContactForm(){
+
+    contact.form.addEventListener(
+
+        "submit",
+
+        submitContactForm
+
+    );
+
+}
+
+/*==================================================
+SUBMIT
+==================================================*/
+
+function submitContactForm(event){
+
+    event.preventDefault();
+
+    if(
+
+        !validatePhoneNumber()
+
+    ){
+
+        contact.phone.focus();
+
+        triggerInvalidPhone();
+
+        return;
+
+    }
+
+    startSubmitAnimation();
+
+}
+
+/*==================================================
+BUTTON
+==================================================*/
+
+function startSubmitAnimation(){
+
+    contact.button.disabled = true;
+
+    contact.button.classList.add(
+
+        "sending"
+
+    );
+
+    contact.button.textContent =
+
+        "Sending...";
+
+    setTimeout(()=>{
+
+        submitSuccess();
+
+    },1800);
+
+}
+
+/*==================================================
+SUCCESS
+==================================================*/
+
+function submitSuccess(){
+
+    contact.button.classList.remove(
+
+        "sending"
+
+    );
+
+    contact.button.classList.add(
+
+        "success"
+
+    );
+
+    contact.button.textContent =
+
+        "✓ Enquiry Received";
+
+    contact.form.classList.add(
+
+        "form-success"
+
+    );
+
+    setTimeout(()=>{
+
+        contact.form.reset();
+
+        contact.phone.classList.remove(
+
+            "valid-phone",
+
+            "invalid-phone"
+
+        );
+
+        contact.button.classList.remove(
+
+            "success"
+
+        );
+
+        contact.button.disabled = false;
+
+        contact.button.textContent =
+
+            "Start My Project";
+
+    },3000);
+
+}
+
+/*==================================================
+INVALID PHONE
+==================================================*/
+
+function triggerInvalidPhone(){
+
+    contact.phone.classList.remove(
+
+        "phone-shake"
+
+    );
+
+    void contact.phone.offsetWidth;
+
+    contact.phone.classList.add(
+
+        "phone-shake"
+
+    );
+
+}
+
+/*==================================================
+READY FOR BACKEND
+==================================================*/
+
+function sendToBackend(formData){
+
+    console.log(
+
+        "Backend Integration Pending",
+
+        formData
+
+    );
+
+        }
+/*==================================================
+PHASE 19A-1
+PREMIUM ENGINE
+==================================================*/
+
+initializePremiumEngine();
+
+/*==================================================
+INITIALIZE
+==================================================*/
+
+function initializePremiumEngine(){
+
+    setupPageLoader();
+
+    setupFooterSignature();
+
+    setupBackToTopEffects();
+
+    setupPerformanceMode();
+
+}
+
+/*==================================================
+PAGE LOADER
+==================================================*/
+
+function setupPageLoader(){
+
+    window.addEventListener(
+
+        "load",
+
+        ()=>{
+
+            document.body.classList.add(
+
+                "page-ready"
+
+            );
+
+        },
+
+        {
+
+            once:true
+
+        }
+
+    );
+
+}
+
+/*==================================================
+FOOTER SIGNATURE
+==================================================*/
+
+function setupFooterSignature(){
+
+    const footer =
+
+    document.querySelector(".footer");
+
+    if(!footer) return;
+
+    const observer =
+
+    new IntersectionObserver(
+
+        entries=>{
+
+            entries.forEach(entry=>{
+
+                if(entry.isIntersecting){
+
+                    footer.classList.add(
+
+                        "footer-visible"
+
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+
+            threshold:.7
+
+        }
+
+    );
+
+    observer.observe(footer);
+
+}
+
+/*==================================================
+BACK TO TOP
+==================================================*/
+
+function setupBackToTopEffects(){
+
+    if(!DOM.backToTop) return;
+
+    DOM.backToTop.addEventListener(
+
+        "mouseenter",
+
+        ()=>{
+
+            DOM.backToTop.classList.add(
+
+                "top-hover"
+
+            );
+
+        }
+
+    );
+
+    DOM.backToTop.addEventListener(
+
+        "mouseleave",
+
+        ()=>{
+
+            DOM.backToTop.classList.remove(
+
+                "top-hover"
+
+            );
+
+        }
+
+    );
+
+}
+
+/*==================================================
+PERFORMANCE
+==================================================*/
+
+function setupPerformanceMode(){
+
+    if(prefersReducedMotion){
+
+        document.body.classList.add(
+
+            "reduce-motion"
+
+        );
+
+    }
+
+        }
