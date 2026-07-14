@@ -3521,3 +3521,153 @@ console.log(
 /*==================================================
 END OF SCRIPT.JS
 ==================================================*/
+/*==================================================
+PHASE 2B-3
+SPLINE LOADER
+==================================================*/
+
+initializeSplineHero();
+
+/*==================================================
+INITIALIZE
+==================================================*/
+
+function initializeSplineHero(){
+
+    const viewer =
+
+        document.getElementById(
+
+            "heroSpline"
+
+        );
+
+    const heroVisual =
+
+        document.querySelector(
+
+            ".hero-visual"
+
+        );
+
+    const placeholder =
+
+        document.querySelector(
+
+            ".spline-placeholder"
+
+        );
+
+    if(
+
+        !viewer ||
+
+        !heroVisual ||
+
+        !placeholder
+
+    ) return;
+
+    /*==============================
+    LOADED
+    ==============================*/
+
+    viewer.addEventListener(
+
+        "load",
+
+        ()=>{
+
+            heroVisual.classList.add(
+
+                "loaded"
+
+            );
+
+        }
+
+    );
+
+    /*==============================
+    FALLBACK
+    ==============================*/
+
+    setTimeout(()=>{
+
+        if(
+
+            !heroVisual.classList.contains(
+
+                "loaded"
+
+            )
+
+        ){
+
+            placeholder.textContent =
+
+            "Unable to load 3D scene.";
+
+        }
+
+    },10000);
+
+}
+/*==================================================
+PHASE 2B-4
+MOUSE PARALLAX
+==================================================*/
+
+const heroVisual =
+
+document.querySelector(
+
+".hero-visual"
+
+);
+
+if(heroVisual){
+
+heroVisual.addEventListener(
+
+"mousemove",
+
+event=>{
+
+const rect=
+
+heroVisual.getBoundingClientRect();
+
+const x=
+
+(event.clientX-rect.left)/rect.width;
+
+const y=
+
+(event.clientY-rect.top)/rect.height;
+
+heroVisual.style.transform=
+
+`perspective(1200px)
+rotateY(${(x-.5)*8}deg)
+rotateX(${(.5-y)*8}deg)`;
+
+}
+
+);
+
+heroVisual.addEventListener(
+
+"mouseleave",
+
+()=>{
+
+heroVisual.style.transform=
+
+"perspective(1200px) rotateX(0deg) rotateY(0deg)";
+
+}
+
+);
+
+}
