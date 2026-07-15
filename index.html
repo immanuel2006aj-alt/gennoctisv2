@@ -1964,11 +1964,17 @@ padding:90px 0;
 
 .section-heading{
 
+width:100%;
+
 max-width:720px;
 
 margin:0 auto 50px;
 
+padding:0 20px;
+
 text-align:center;
+
+box-sizing:border-box;
 
 }
 
@@ -2000,18 +2006,83 @@ margin-bottom:20px;
 
 font-size:clamp(2rem,4vw,3.4rem);
 
+line-height:1.2;
+
 margin-bottom:18px;
+
+word-break:normal;
+
+overflow-wrap:break-word;
 
 }
 
 .section-heading p{
 
+width:100%;
+
 max-width:620px;
 
-margin:auto;
+margin:0 auto;
+
+line-height:1.8;
 
 }
 
+/*==========================================
+RESPONSIVE
+==========================================*/
+
+@media (max-width:768px){
+
+.section-heading{
+
+max-width:100%;
+
+padding:0 16px;
+
+margin:0 auto 40px;
+
+}
+
+.section-heading h2{
+
+font-size:2rem;
+
+line-height:1.25;
+
+}
+
+.section-heading p{
+
+max-width:100%;
+
+font-size:1rem;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.section-heading{
+
+padding:0 14px;
+
+}
+
+.section-heading h2{
+
+font-size:1.8rem;
+
+}
+
+.section-heading p{
+
+font-size:.96rem;
+
+}
+
+  }
 /*==========================================
 SLIDER
 ==========================================*/
@@ -2073,7 +2144,6 @@ animation-play-state:paused;
 /*==========================================
 PARTNER CARD
 ==========================================*/
-
 .partner-card{
 
 display:flex;
@@ -2084,9 +2154,11 @@ justify-content:center;
 
 flex-shrink:0;
 
-width:220px;
+width:clamp(170px,45vw,220px);
 
 height:92px;
+
+padding:0 18px;
 
 border-radius:22px;
 
@@ -2097,6 +2169,8 @@ transition:.35s ease;
 background:rgba(255,255,255,.04);
 
 border:1px solid rgba(255,255,255,.08);
+
+box-sizing:border-box;
 
 }
 
@@ -2126,6 +2200,8 @@ letter-spacing:.08em;
 
 color:var(--white);
 
+text-align:center;
+
 }
 
 .partner-card span{
@@ -2135,6 +2211,8 @@ font-size:.92rem;
 font-weight:600;
 
 color:var(--silver);
+
+text-align:center;
 
 }
 
@@ -2155,6 +2233,32 @@ rgba(255,255,255,.04)
 );
 
 }
+
+@media (max-width:768px){
+
+.partner-card{
+
+width:170px;
+
+height:84px;
+
+border-radius:18px;
+
+}
+
+.partner-name{
+
+font-size:.92rem;
+
+}
+
+.partner-card span{
+
+font-size:.84rem;
+
+}
+
+}
 /*==========================================
 PARTNER ANIMATION
 ==========================================*/
@@ -2169,11 +2273,11 @@ transform:translateX(0);
 
 100%{
 
-transform:translateX(calc(-242px * 6));
+transform:translateX(-50%);
 
 }
 
-}
+  }
 
 /*==========================================
 PREMIUM HOVER EFFECTS
@@ -2264,7 +2368,7 @@ opacity:1;
 }
 
 /*==========================================
-RESPONSIVE
+TRUSTED PARTNERS RESPONSIVE
 ==========================================*/
 
 @media (max-width:991px){
@@ -2295,13 +2399,47 @@ padding:70px 0;
 
 .section-heading{
 
-margin-bottom:40px;
+width:100%;
+
+max-width:100%;
+
+padding:0 16px;
+
+margin:0 auto 40px;
+
+box-sizing:border-box;
 
 }
 
 .section-heading h2{
 
 font-size:2rem;
+
+line-height:1.25;
+
+}
+
+.section-heading p{
+
+max-width:100%;
+
+}
+
+.partner-slider{
+
+width:100%;
+
+margin:0;
+
+padding:0;
+
+overflow:hidden;
+
+}
+
+.partner-track{
+
+gap:16px;
 
 }
 
@@ -2333,9 +2471,17 @@ font-size:.82rem;
 
 .partner-slider{
 
-margin-inline:-4%;
+width:100%;
 
-padding-inline:4%;
+margin:0;
+
+padding:0;
+
+}
+
+.partner-track{
+
+gap:14px;
 
 }
 
@@ -2347,12 +2493,6 @@ height:72px;
 
 }
 
-.partner-track{
-
-gap:14px;
-
-}
-
 .section-tag{
 
 font-size:.75rem;
@@ -2361,7 +2501,13 @@ padding:8px 14px;
 
 }
 
+.section-heading{
+
+padding:0 14px;
+
 }
+
+  }
 
 /*==========================================
 ACCESSIBILITY
